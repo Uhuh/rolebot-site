@@ -9,10 +9,7 @@
     ></span>
   </div>
   <div
-    class="ml-auto"
-    [className]="
-      active ? 'command-description active' : 'command-description disabled'
-    "
+    [className]="active ? 'command-description active' : 'command-description'"
   >
     <hr />
     <strong>Usage: </strong><ng-content select="[usage]"></ng-content>
