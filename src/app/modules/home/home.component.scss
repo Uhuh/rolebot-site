@@ -91,7 +91,7 @@
     grid-column-gap: 10px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     gap: 10px;
     grid-column-gap: 25px;
     grid-template-columns: none;
@@ -100,7 +100,7 @@
 
 .col-left {
   order: -1;
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     order: 0;
   }
 }

@@ -15,7 +15,7 @@ footer {
   justify-content: space-between;
   width: 100%;
   max-width: 1280px;
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -25,7 +25,8 @@ footer {
 .links {
   display: flex;
   gap: 60px;
-  @media (max-width: 600px) {
+  padding: 0 20px;
+  @media (max-width: 650px) {
     flex-direction: column;
   }
 }

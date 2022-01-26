@@ -8,6 +8,7 @@
   align-items: center;
 
   @media (min-width: 300px) and (max-width: 1200px) {
+    gap: 30px;
     margin: 0 1rem;
   }
 }
@@ -16,6 +17,12 @@ section {
   display: flex;
   flex-direction: column;
   margin-bottom: auto;
+  max-width: 800px;
+  margin: auto;
+
+  @media (min-width: 300px) and (max-width: 1200px) {
+    gap: 30px;
+  }
 }
 
 .faq-header {
