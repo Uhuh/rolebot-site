@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+h2, p {
+  margin: 5px 0;
+}
+
+.command-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.command-list {
+  width: 100%;
+}

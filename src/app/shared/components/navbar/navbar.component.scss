@@ -1,0 +1,21 @@
+.navbar-container {
+  padding: 20px 35px;
+  margin: 0;
+  display: flex;
+  background-color: var(--accent-color);
+  a {
+    color: var(--white);
+    font-weight: 700;
+    &:hover {
+      color: var(--third-color)
+    }
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.plr-5 {
+  padding: 0 5px;
+}

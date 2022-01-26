@@ -1,0 +1,22 @@
+<div class="accordion-item">
+  <div class="command-title" (click)="toggleContent()">
+    <div class="command-header">
+      <ng-content select="[title]"></ng-content>
+      <ng-content select="[description]"></ng-content>
+    </div>
+    <span
+      [className]="active ? 'command-title opened' : 'command-title closed'"
+    ></span>
+  </div>
+  <div
+    class="ml-auto"
+    [className]="
+      active ? 'command-description active' : 'command-description disabled'
+    "
+  >
+    <hr />
+    <strong>Usage: </strong><ng-content select="[usage]"></ng-content>
+    <strong>Description: </strong
+    ><ng-content select="[detailed-description]"></ng-content>
+  </div>
+</div>
