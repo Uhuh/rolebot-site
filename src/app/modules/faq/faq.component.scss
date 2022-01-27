@@ -2,14 +2,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: auto;
+  margin: 40px;
 
   justify-content: center;
   align-items: center;
 
   @media (min-width: 300px) and (max-width: 1200px) {
     gap: 30px;
-    margin: 0 1rem;
   }
 }
 
@@ -26,8 +25,8 @@ section {
 }
 
 .faq-header {
-  p {
-    color: var(--grey);
+  h1 {
+    margin: 0;
   }
 }
 

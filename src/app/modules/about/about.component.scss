@@ -3,3 +3,14 @@
   flex: 1;
   margin: auto;
 }
+
+.about-container {
+  display: flex;
+  gap: 60px;
+  margin: 40px;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    margin: 40px 0;
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ISlashCommand } from '../types/interfaces';
 
 @Component({
   selector: 'app-accordion',
@@ -6,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./accordion.component.scss'],
 })
 export class AccordionComponent implements OnInit {
+  @Input() slashCommand?: ISlashCommand;
   active = false;
 
   constructor() {}

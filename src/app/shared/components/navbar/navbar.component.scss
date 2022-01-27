@@ -19,3 +19,15 @@
 .plr-5 {
   padding: 0 5px;
 }
+
+.links {
+  @media (max-width: 650px) {
+    margin-left: 0;
+    display: none;
+  }
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+}

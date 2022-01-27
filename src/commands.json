@@ -1,0 +1,92 @@
+{
+  "react": [
+    {
+      "title": "/react-role",
+      "description": "Create a single react role.",
+      "usage": "/react-role role emoji",
+      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+    },
+    {
+      "title": "/react-role",
+      "description": "Create a single react role.",
+      "usage": "/react-role role emoji",
+      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+    },
+    {
+      "title": "/react-role",
+      "description": "Create a single react role.",
+      "usage": "/react-role role emoji",
+      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+    },
+    {
+      "title": "/react-role",
+      "description": "Create a single react role.",
+      "usage": "/react-role role emoji",
+      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+    },
+    {
+      "title": "/react-role",
+      "description": "Create a single react role.",
+      "usage": "/react-role role emoji",
+      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+    }
+  ],
+  "category": [
+    {
+      "title": "/category-add",
+      "description": "Add react roles to a category",
+      "usage": "/category-add",
+      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+    },
+    {
+      "title": "/category-add",
+      "description": "Add react roles to a category",
+      "usage": "/category-add",
+      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+    },
+    {
+      "title": "/category-add",
+      "description": "Add react roles to a category",
+      "usage": "/category-add",
+      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+    },
+    {
+      "title": "/category-add",
+      "description": "Add react roles to a category",
+      "usage": "/category-add",
+      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+    },
+    {
+      "title": "/category-add",
+      "description": "Add react roles to a category",
+      "usage": "/category-add",
+      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+    }
+  ],
+  "general": [
+    {
+      "title": "/info",
+      "description": "Basic information about RoleBot",
+      "usage": "/info",
+      "detailedDescription": "Get the ping, latency, server size and your servers shard."
+    },
+    {
+      "title": "/info",
+      "description": "Basic information about RoleBot",
+      "usage": "/info",
+      "detailedDescription": "Get the ping, latency, server size and your servers shard."
+    },
+    {
+      "title": "/info",
+      "description": "Basic information about RoleBot",
+      "usage": "/info",
+      "detailedDescription": "Get the ping, latency, server size and your servers shard."
+    },
+    {
+      "title": "/info",
+      "description": "Basic information about RoleBot",
+      "usage": "/info",
+      "detailedDescription": "Get the ping, latency, server size and your servers shard."
+    }
+  ]
+}

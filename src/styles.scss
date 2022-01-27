@@ -54,6 +54,26 @@ a {
   border-radius: 5px;
 }
 
+.card {
+  width: 350px;
+  height: 400px;
+
+  color: var(--accent-color);
+  font-weight: 700;
+  background-color: var(--white);
+  border-radius: 6px;
+
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.card > .header {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 2px solid black;
+}
+
 .slideInLeft {
   animation: slideLeft 0.7s;
 }

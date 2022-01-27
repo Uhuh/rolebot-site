@@ -3,7 +3,8 @@
     <div>
       <a routerLink=""> RoleBot </a>
     </div>
-    <div class="ml-auto">
+    <div [className]="active ? 'ml-auto links active' : 'ml-auto links'">
+      <a class="plr-5" routerLink="about"> About </a>
       <a class="plr-5" routerLink="commands"> Commands </a>
       <a class="plr-5" routerLink="faqs"> FAQ </a>
       <a class="plr-5" routerLink="stats"> Stats </a>

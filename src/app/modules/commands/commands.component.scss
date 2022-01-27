@@ -3,17 +3,38 @@
   flex: 1 1 auto;
 }
 
-h2, p {
-  margin: 5px 0;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin: 0;
+  }
 }
 
 .command-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin: 40px;
+  margin-bottom: 3rem;
 }
 
 .command-list {
   width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: auto;
+  @media (min-width: 300px) and (max-width: 1250px) {
+    flex-direction: column;
+  }
+}
+
+.commands {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

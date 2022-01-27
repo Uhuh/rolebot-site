@@ -1,8 +1,8 @@
-<div class="accordion-item">
+<div *ngIf="slashCommand" class="accordion-item">
   <div class="command-title" (click)="toggleContent()">
     <div class="command-header">
-      <ng-content select="[title]"></ng-content>
-      <ng-content select="[description]"></ng-content>
+      <h2>{{ slashCommand.title }}</h2>
+      <span>{{ slashCommand.description }}</span>
     </div>
     <span
       [className]="active ? 'command-title opened' : 'command-title closed'"
@@ -12,8 +12,9 @@
     [className]="active ? 'command-description active' : 'command-description'"
   >
     <hr />
-    <strong>Usage: </strong><ng-content select="[usage]"></ng-content>
-    <strong>Description: </strong
-    ><ng-content select="[detailed-description]"></ng-content>
+    <strong>Usage: </strong>
+    <p>{{ slashCommand.usage }}</p>
+    <strong>Description: </strong>
+    <p>{{ slashCommand.detailedDescription }}</p>
   </div>
 </div>
