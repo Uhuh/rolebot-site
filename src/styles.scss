@@ -12,6 +12,10 @@
   font-size: 125%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -55,9 +59,8 @@ a {
 }
 
 .card {
-  width: 350px;
-  height: 400px;
-
+  max-width: 450px;
+  min-height: 300px;
   color: var(--accent-color);
   font-weight: 700;
   background-color: var(--white);
@@ -65,13 +68,29 @@ a {
 
   margin: 10px;
   padding: 10px 20px;
+
+  p {
+    font-size: 0.8rem;
+  }
+  a{
+    font-weight: 700;
+  }
+  @media (max-width: 600px) {
+    max-width: 350px;
+  }
 }
 
 .card > .header {
   width: 100%;
-  text-align: center;
   padding: 10px 0;
   border-bottom: 2px solid black;
+}
+
+.card > .content {
+  span {
+    font-weight: 700;
+    color: var(--third-color);
+  }
 }
 
 .slideInLeft {
