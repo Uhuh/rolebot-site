@@ -1,7 +1,10 @@
 .navbar-container {
+  display: flex;
+  flex-wrap: wrap;
+
   padding: 20px 35px;
   margin: 0;
-  display: flex;
+
   background-color: var(--accent-color);
   a {
     color: var(--white);
@@ -22,12 +25,81 @@
 
 .links {
   @media (max-width: 650px) {
+    display: flex;
+    font-size: 0.8rem;
+    flex-direction: column;
     margin-left: 0;
+    padding-top: 20px;
+    gap: 20px;
+    flex-basis: 100%;
+    align-items: center;
+  }
+}
+
+.collapsed {
+  @media (max-width: 650px) {
     display: none;
   }
 }
 
-.active {
-  display: flex;
-  flex-direction: column;
+.collapsable {
+  @media (max-width: 650px) {
+    display: flex;
+  }
+}
+
+
+/* Codepen hamburger CSS */
+/* Icon 1 */
+
+#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
+  width: 25px;
+  height: 15px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+  @media (min-width: 650px) {
+    display: none;
+  }
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 10px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 20px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
 }

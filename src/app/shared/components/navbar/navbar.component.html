@@ -3,7 +3,20 @@
     <div>
       <a routerLink=""> RoleBot </a>
     </div>
-    <div [className]="active ? 'ml-auto links active' : 'ml-auto links'">
+    <div
+      [className]="active ? 'ml-auto open' : 'ml-auto'"
+      id="nav-icon1"
+      (click)="toggleMobileMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div
+      [className]="
+        active ? 'ml-auto links collapsable' : 'ml-auto links collapsed'
+      "
+    >
       <a class="plr-5" routerLink="about"> About </a>
       <a class="plr-5" routerLink="commands"> Commands </a>
       <a class="plr-5" routerLink="faqs"> FAQ </a>
