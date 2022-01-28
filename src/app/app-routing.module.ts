@@ -16,10 +16,6 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'stats',
-    component: StatsComponent,
-  },
-  {
     path: 'commands',
     component: CommandsComponent,
   },
