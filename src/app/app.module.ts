@@ -13,6 +13,7 @@ import { AboutComponent } from './modules/about/about.component';
 import { AccordionComponent } from './shared/accordion/accordion.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PrivacyPolicyComponent } from './modules/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { environment } from '../environments/environment';
     FooterComponent,
     FaqComponent,
     AboutComponent,
-    AccordionComponent
+    AccordionComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,14 @@
 {
-  "name": "app",
-  "short_name": "app",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "RoleBot Dashboard",
+  "short_name": "RoleBot",
+  "theme_color": "#123133",
+  "background_color": "#173f44",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
   "icons": [
     {
-      "src": "assets/icons/rolebot-log-512x512.png",
+      "src": "assets/icons/rolebot-logo-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"

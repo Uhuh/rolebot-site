@@ -4,6 +4,7 @@ import { AboutComponent } from './modules/about/about.component';
 import { CommandsComponent } from './modules/commands/commands.component';
 import { FaqComponent } from './modules/faq/faq.component';
 import { HomeComponent } from './modules/home/home.component';
+import { PrivacyPolicyComponent } from './modules/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'faqs',
     component: FaqComponent,
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent,
   },
 ];
 
