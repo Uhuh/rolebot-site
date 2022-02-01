@@ -1,31 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './modules/about/about.component';
-import { CommandsComponent } from './modules/commands/commands.component';
-import { FaqComponent } from './modules/faq/faq.component';
-import { HomeComponent } from './modules/home/home.component';
-import { PrivacyPolicyComponent } from './modules/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadChildren: () =>
+      import('./modules/home/home.module').then((mod) => mod.HomeModule),
   },
   {
     path: 'about',
-    component: AboutComponent,
+    loadChildren: () =>
+      import('./modules/about/about.module').then((mod) => mod.AboutModule),
   },
   {
     path: 'commands',
-    component: CommandsComponent,
+    loadChildren: () =>
+      import('./modules/commands/commands.module').then(
+        (mod) => mod.CommandsModule
+      ),
   },
   {
     path: 'faqs',
-    component: FaqComponent,
+    loadChildren: () =>
+      import('./modules/faq/faq.module').then((mod) => mod.FaqModule),
   },
   {
     path: 'privacy-policy',
-    component: PrivacyPolicyComponent,
+    loadChildren: () =>
+      import('./modules/privacy-policy/privacy-policy.module').then(
+        (mod) => mod.PrivacyPolicyModule
+      ),
   },
 ];
 
