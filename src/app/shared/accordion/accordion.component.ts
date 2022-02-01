@@ -15,7 +15,6 @@ export class AccordionComponent implements OnInit {
   ngOnInit(): void {}
 
   toggleContent = () => {
-    console.log(this.active);
     this.active = !this.active;
   };
 }
