@@ -1,10 +1,10 @@
 {
   "react": [
     {
-      "title": "/react-role",
-      "description": "Create a single react role.",
-      "usage": "/react-role role emoji",
-      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+      "title": "/react-channel",
+      "description": "Send category embeds to a specific channel.",
+      "usage": "/react-channel #channel",
+      "detailedDescription": "Select a channel for RoleBot to send all configured Category's to and react to. This is the recommend way to use RoleBot."
     },
     {
       "title": "/react-role",
@@ -13,54 +13,60 @@
       "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
     },
     {
-      "title": "/react-role",
-      "description": "Create a single react role.",
+      "title": "/react-list",
+      "description": "List all react roles.",
       "usage": "/react-role role emoji",
       "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
     },
     {
-      "title": "/react-role",
-      "description": "Create a single react role.",
-      "usage": "/react-role role emoji",
-      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+      "title": "/react-message",
+      "description": "RoleBot will react to a single message for a single category.",
+      "usage": "/react-message message-link",
+      "detailedDescription": "Instead of using RoleBot's default Category embeds you can have RoleBot react to your messages instead! This is one Category per message."
     },
     {
-      "title": "/react-role",
-      "description": "Create a single react role.",
-      "usage": "/react-role role emoji",
-      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+      "title": "/react-remove",
+      "description": "Remove a single react role",
+      "usage": "/react-remove @role",
+      "detailedDescription": "Don't want a react role anymore? Remove it!"
     }
   ],
   "category": [
     {
       "title": "/category-add",
-      "description": "Add react roles to a category",
+      "description": "Add react roles to a category.",
       "usage": "/category-add",
       "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
     },
     {
-      "title": "/category-add",
-      "description": "Add react roles to a category",
-      "usage": "/category-add",
-      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+      "title": "/category-create",
+      "description": "Create a new Category",
+      "usage": "/category-create name description mutually-exclusive",
+      "detailedDescription": "Create a category to organize your react roles in. Make roles mutually exclusive, give it a description to help users understand what the roles are for!"
     },
     {
-      "title": "/category-add",
-      "description": "Add react roles to a category",
-      "usage": "/category-add",
-      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+      "title": "/category-edit",
+      "description": "Edit a category's information.",
+      "usage": "/category-edit name new-name new-description mutually-exclusive",
+      "detailedDescription": "Made a mistake and want to fix it? Use the edit command!"
     },
     {
-      "title": "/category-add",
-      "description": "Add react roles to a category",
-      "usage": "/category-add",
-      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+      "title": "/category-list",
+      "description": "List all categoryies.",
+      "usage": "/category-list",
+      "detailedDescription": "Listing your categories shows if a category is mutually-exclusive and the react roles, description and title within it."
     },
     {
-      "title": "/category-add",
-      "description": "Add react roles to a category",
-      "usage": "/category-add",
-      "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
+      "title": "/category-remove",
+      "description": "Want to remove a category? Use this.",
+      "usage": "/category-remove name",
+      "detailedDescription": "This will delete the category and free all react roles inside of it."
+    },
+    {
+      "title": "/category-update",
+      "description": "Update a category embed.",
+      "usage": "/category-update message-link",
+      "detailedDescription": "This command updates an embed sent by the /react-channel command."
     }
   ],
   "general": [
@@ -71,22 +77,16 @@
       "detailedDescription": "Get the ping, latency, server size and your servers shard."
     },
     {
-      "title": "/info",
-      "description": "Basic information about RoleBot",
-      "usage": "/info",
-      "detailedDescription": "Get the ping, latency, server size and your servers shard."
+      "title": "/auto-join",
+      "description": "This command isn't done yet!",
+      "usage": "/auto-join",
+      "detailedDescription": "Auto join roles are in the works, thanks for understanding!"
     },
     {
-      "title": "/info",
-      "description": "Basic information about RoleBot",
-      "usage": "/info",
-      "detailedDescription": "Get the ping, latency, server size and your servers shard."
-    },
-    {
-      "title": "/info",
-      "description": "Basic information about RoleBot",
-      "usage": "/info",
-      "detailedDescription": "Get the ping, latency, server size and your servers shard."
+      "title": "/tutorial",
+      "description": "Need to learn the ropes?",
+      "usage": "/tutorial",
+      "detailedDescription": "This command helps walk you through how to create a basic category and use it for react roles."
     }
   ]
 }
