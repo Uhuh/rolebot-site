@@ -1,12 +1,16 @@
 <div class="store-container">
   <div class="header">
-    <h1>Hello world</h1>
+    <h1>Category Presets</h1>
+    <p>Need some react role ideas? Let RoleBot handle it for you!</p>
   </div>
-  <div class="list">
-    <app-category-card
-      title="Colors"
-      description="Want to be a specific color?"
-      [reactRoles]="reactRoles"
-    ></app-category-card>
-  </div>
+  <section>
+    <div class="list">
+      <app-category-card
+        *ngFor="let category of categories"
+        [title]="category.title"
+        [description]="category.description"
+        [reactRoles]="category.reactRoles"
+      ></app-category-card>
+    </div>
+  </section>
 </div>

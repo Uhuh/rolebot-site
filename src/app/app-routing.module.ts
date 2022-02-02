@@ -32,7 +32,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'store',
+    path: 'presets',
     loadChildren: () =>
       import('./modules/category-store/category-store.module').then(
         (mod) => mod.CategoryStoreModule

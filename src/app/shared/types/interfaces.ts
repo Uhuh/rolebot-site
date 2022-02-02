@@ -10,3 +10,9 @@ export interface IReactRole {
   name: string;
   hexCode: string;
 }
+
+export interface ICategory {
+  title: string;
+  description: string;
+  reactRoles: IReactRole[];
+}
