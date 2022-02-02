@@ -6,10 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'app';
-
   onActivate() {
     window.scroll(0, 0);
-    console.log(`DWFERWQ`);
   }
 }
