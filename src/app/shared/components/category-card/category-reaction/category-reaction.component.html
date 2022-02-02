@@ -1,0 +1,8 @@
+<div [class]="clicked ? 'reaction clicked' : 'reaction'" (click)="onReact()">
+  <div class="text-wrapper">
+    <div class="unicode">{{ reactRole?.unicode }}</div>
+    <div class="num-reacts">
+      {{ reactions }}
+    </div>
+  </div>
+</div>

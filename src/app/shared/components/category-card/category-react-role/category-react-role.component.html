@@ -1,0 +1,10 @@
+<div class="react-role" *ngFor="let reactRole of reactRoles">
+  <span> {{ reactRole.unicode }}</span>
+  -
+  <div class="role">
+    <div class="text" [style.color]="reactRole.hexCode">
+      @{{ reactRole.name }}
+    </div>
+    <div class="bg-color" [style.background-color]="reactRole.hexCode"></div>
+  </div>
+</div>

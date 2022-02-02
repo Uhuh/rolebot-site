@@ -104,6 +104,10 @@
       font-size: 1rem !important;
     }
   }
+
+  &::before {
+    content: '';
+  }
 }
 
 .banner-text, .text-group {

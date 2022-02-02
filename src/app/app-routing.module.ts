@@ -31,6 +31,13 @@ const routes: Routes = [
         (mod) => mod.PrivacyPolicyModule
       ),
   },
+  {
+    path: 'store',
+    loadChildren: () =>
+      import('./modules/category-store/category-store.module').then(
+        (mod) => mod.CategoryStoreModule
+      ),
+  },
 ];
 
 @NgModule({

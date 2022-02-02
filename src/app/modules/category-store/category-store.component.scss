@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  background-size: cover;
+  background-image: var(--banner-default);
+  flex: 1;
+}
+
+.store-container {
+  margin: 40px;
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  align-items: center;
+}

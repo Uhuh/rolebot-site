@@ -4,3 +4,9 @@ export interface ISlashCommand {
   usage: string;
   detailedDescription: string;
 }
+
+export interface IReactRole {
+  unicode: string;
+  name: string;
+  hexCode: string;
+}

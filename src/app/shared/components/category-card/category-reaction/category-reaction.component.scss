@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+}
+
+.reaction {
+  user-select: none;
+  background-color: var(--discord-embed-theme);
+  padding: 3px 5px;
+  border-radius: 10px;
+  transition: outline 0.2s, color 0.2s, outline-color 0.2s, background-color 0.2s ease;
+
+  &:hover {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    outline: 1px var(--white) solid;
+  }
+
+  &.clicked {
+    outline: 1px var(--blurple) solid;
+  }
+}
+
+.text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unicode {
+  margin-top: -3px;
+}
+
+.num-reacts {
+  color: var(--grey);
+  font-size: 0.8rem;
+  padding: 5px 5px;
+}
