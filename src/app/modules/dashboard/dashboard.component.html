@@ -1,0 +1,11 @@
+<div class="dashbaord" *ngIf="username">
+  <app-user-header></app-user-header>
+  <div class="guilds-container">
+    <a *ngFor="let guild of guilds" [routerLink]="guild.id">
+      <app-guild-card [guild]="guild"></app-guild-card>
+    </a>
+  </div>
+</div>
+<div class="login-notice" *ngIf="!username">
+  Looking for your dashboard? Make sure to login.
+</div>

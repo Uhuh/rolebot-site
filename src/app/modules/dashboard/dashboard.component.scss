@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-image: var(--banner-default);
+  @media (min-width: 300px) and (max-width: 1200px) {
+    background-position: right;
+  }
+}
+
+.dashbaord {
+  margin: auto;
+}
+
+.login-notice {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.guilds-container {
+  display: grid;
+  margin: 40px 0;
+  padding: 50px 0;
+  border-radius: 10px;
+
+  background-color: var(--accent-color);
+
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 20px;
+
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 20px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
