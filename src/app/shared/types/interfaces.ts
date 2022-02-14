@@ -16,3 +16,9 @@ export interface ICategory {
   description: string;
   reactRoles: IReactRole[];
 }
+
+export interface IGuild {
+  id: string;
+  icon: string;
+  name: string;
+}
