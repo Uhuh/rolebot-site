@@ -38,6 +38,20 @@ const routes: Routes = [
         (mod) => mod.CategoryStoreModule
       ),
   },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then(
+        (mod) => mod.DashboardModule
+      ),
+  },
+  {
+    path: 'dashboard/:guildId',
+    loadChildren: () =>
+      import('./modules/dashboard/guild-details/guild-details.module').then(
+        (mod) => mod.GuildDetailsModule
+      ),
+  },
 ];
 
 @NgModule({
