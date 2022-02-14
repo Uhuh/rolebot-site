@@ -12,11 +12,7 @@
       <span></span>
       <span></span>
     </div>
-    <div
-      [className]="
-        active ? 'ml-auto links collapsable' : 'ml-auto links collapsed'
-      "
-    >
+    <div [@openClose]="active ? 'open' : 'closed'" class="ml-auto links">
       <a class="plr-5" routerLink="about"> About </a>
       <a class="plr-5" routerLink="commands"> Commands </a>
       <a class="plr-5" routerLink="faqs"> FAQ </a>
@@ -30,6 +26,19 @@
       >
         Invite
       </a>
+      <a
+        *ngIf="!avatar"
+        href="https://discord.com/api/oauth2/authorize?client_id=908407557951987742&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Fdashboard&response_type=code&scope=guilds%20identify"
+      >
+        Login
+      </a>
+      <img
+        *ngIf="avatar"
+        class="user-avatar"
+        src="https://images.discordapp.net/avatars/{{ userId }}/{{
+          avatar
+        }}?size=256"
+      />
     </div>
   </div>
 </nav>

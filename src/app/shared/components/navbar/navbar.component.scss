@@ -1,5 +1,6 @@
 .navbar-container {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
 
   padding: 20px 35px;
@@ -24,15 +25,15 @@
 }
 
 .links {
+  display: flex;
+  align-items: center;
   @media (max-width: 650px) {
-    display: flex;
     font-size: 0.8rem;
     flex-direction: column;
     margin-left: 0;
     padding-top: 20px;
     gap: 20px;
     flex-basis: 100%;
-    align-items: center;
   }
 }
 
@@ -48,11 +49,17 @@
   }
 }
 
+.user-avatar {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+}
+
 
 /* Codepen hamburger CSS */
 /* Icon 1 */
-
 #nav-icon {
+  margin-top: -8px;
   width: 25px;
   height: 15px;
   position: relative;
