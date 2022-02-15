@@ -1,37 +1,9 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { JwtService } from '../../services/jwtHandler.service';
 
 @Component({
   selector: 'app-navbar',
-  animations: [
-    trigger('openClose', [
-      state(
-        'open',
-        style({
-          display: 'flex',
-          maxHeight: '300px',
-        })
-      ),
-      state(
-        'closed',
-        style({
-          maxHeight: '0',
-          overflow: 'hidden',
-          opacity: '0',
-          padding: '0',
-        })
-      ),
-      transition('open <=> closed', [animate('0.2s')]),
-    ]),
-  ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })

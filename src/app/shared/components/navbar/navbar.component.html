@@ -12,7 +12,11 @@
       <span></span>
       <span></span>
     </div>
-    <div [@openClose]="active ? 'open' : 'closed'" class="ml-auto links">
+    <div
+      [className]="
+        active ? 'ml-auto links collapsable' : 'ml-auto links collapsed'
+      "
+    >
       <a class="plr-5" routerLink="about"> About </a>
       <a class="plr-5" routerLink="commands"> Commands </a>
       <a class="plr-5" routerLink="faqs"> FAQ </a>

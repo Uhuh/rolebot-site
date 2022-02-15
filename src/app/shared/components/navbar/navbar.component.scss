@@ -1,3 +1,26 @@
+:host {
+  transition: all 0.2s ease;
+
+  .collapsed {
+    transition: all 0.2s ease;
+    @media (max-width: 650px) {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      padding: 0;
+    }
+  }
+
+  .collapsable {
+    transition: all 0.2s ease;
+    @media (max-width: 650px) {
+      display: flex;
+      max-height: 300px;
+    }
+  }
+}
+
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -37,17 +60,7 @@
   }
 }
 
-.collapsed {
-  @media (max-width: 650px) {
-    display: none;
-  }
-}
 
-.collapsable {
-  @media (max-width: 650px) {
-    display: flex;
-  }
-}
 
 .user-avatar {
   height: 48px;
