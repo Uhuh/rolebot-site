@@ -8,6 +8,7 @@ import { IReactRole } from 'src/app/shared/types/interfaces';
 })
 export class CategoryReactionComponent implements OnInit {
   @Input() reactRole?: IReactRole;
+  readonly discordEmojiUrl = 'https://cdn.discordapp.com/emojis';
   reactions = 1;
   clicked = false;
 
@@ -22,5 +23,17 @@ export class CategoryReactionComponent implements OnInit {
     } else {
       this.reactions--;
     }
+  }
+
+  get isCustomEmoji() {
+    return /\d{17,19}/.exec(this.reactRole?.emojiId || '');
+  }
+
+  get emoji() {
+    const match = /\d{17,19}/.exec(this.reactRole?.emojiId || '');
+
+    return match
+      ? `${this.discordEmojiUrl}/${this.reactRole?.emojiId}`
+      : this.reactRole?.emojiId;
   }
 }

@@ -9,18 +9,12 @@ import { JwtService } from '../../services/jwtHandler.service';
 })
 export class NavbarComponent implements OnInit {
   active = false;
-  avatar?: string;
-  userId?: string;
+  isFresh = false;
 
   constructor(private readonly jwtService: JwtService) {}
 
   ngOnInit(): void {
-    combineLatest([this.jwtService.avatar$, this.jwtService.userId$]).subscribe(
-      ([avatar, userId]) => {
-        this.avatar = avatar;
-        this.userId = userId;
-      }
-    );
+    this.jwtService.isFresh$.subscribe((isFresh) => (this.isFresh = !!isFresh));
   }
 
   toggleMobileMenu = () => (this.active = !this.active);

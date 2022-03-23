@@ -6,14 +6,19 @@ export interface ISlashCommand {
 }
 
 export interface IReactRole {
-  unicode: string;
+  id: number;
   name: string;
-  hexCode: string;
+  emojiId: string;
+  roleId: string;
+
+  hexCode?: string;
 }
 
 export interface ICategory {
-  title: string;
+  id: number;
+  name: string;
   description: string;
+  mutuallyExclusive: boolean;
   reactRoles: IReactRole[];
 }
 

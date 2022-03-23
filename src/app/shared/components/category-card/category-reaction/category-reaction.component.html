@@ -1,6 +1,7 @@
 <div [class]="clicked ? 'reaction clicked' : 'reaction'" (click)="onReact()">
   <div class="text-wrapper">
-    <div class="unicode">{{ reactRole?.unicode }}</div>
+    <img *ngIf="isCustomEmoji" [src]="emoji" />
+    <div *ngIf="!isCustomEmoji" class="unicode">{{ emoji }}</div>
     <div class="num-reacts">
       {{ reactions }}
     </div>
