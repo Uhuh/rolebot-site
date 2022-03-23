@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { combineLatest, first, Subject } from 'rxjs';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { combineLatest, Subject } from 'rxjs';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { JwtService } from 'src/app/shared/services/jwtHandler.service';
 import { IGuild } from 'src/app/shared/types/interfaces';
 
@@ -18,18 +18,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(
     private readonly jwtService: JwtService,
     private readonly route: ActivatedRoute,
-    private readonly authService: AuthService
+    private readonly apiService: ApiService
   ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(async (params) => {
       if (params['code']) {
-        this.authService
-          .authorizeUser(params['code'])
-          .pipe(first())
-          .subscribe(() => {
-            this.jwtService.updateJwtToken();
-          });
+        this.apiService.authorizeUser(params['code']).subscribe(() => {
+          this.jwtService.updateJwtToken();
+        });
       }
     });
 
