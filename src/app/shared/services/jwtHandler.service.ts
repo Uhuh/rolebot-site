@@ -4,6 +4,7 @@ import { COOKIES } from '../tokens/cookies.token';
 import { CookiesStatic } from 'js-cookie';
 import jwt_decode from 'jwt-decode';
 import { IGuild } from '../types/interfaces';
+import { LOCAL_STORAGE } from '../tokens/localStorage.token';
 
 interface IUser {
   readonly id: string;
@@ -23,6 +24,7 @@ interface IJwtUserInfo {
   readonly id: string;
   readonly aud: string[];
   readonly sub: string;
+  readonly exp: number;
 }
 
 @Injectable({
@@ -62,12 +64,12 @@ export class JwtService {
   readonly banner$ = this.banner.asObservable();
   readonly isFresh$ = this.isFresh.asObservable();
 
-  constructor(@Inject(COOKIES) private readonly cookies: CookiesStatic) {
+  constructor(@Inject(LOCAL_STORAGE) private readonly localStorage: Storage) {
     this.updateJwtToken();
   }
 
   updateJwtToken(): void {
-    const token = this.getCookieJwtToken();
+    const token = this.getStorageToken();
 
     if (!token) {
       this.invalidToken();
@@ -90,6 +92,8 @@ export class JwtService {
       this.userId.next(user?.id);
       this.avatar.next(user?.avatar);
       this.discriminator.next(user?.discriminator);
+      this.jwtExpireDate.next(new Date((decodedUserInfo?.exp ?? -1) * 1000));
+      this.isFresh.next(true);
 
       const now = new Date().getTime();
 
@@ -101,7 +105,8 @@ export class JwtService {
       setTimeout(() => {
         this.isFresh.next(false);
       }, diff);
-    } catch {
+    } catch (e) {
+      console.log(`${e}`);
       this.invalidToken();
     }
   }
@@ -111,8 +116,8 @@ export class JwtService {
     this.isFresh.next(false);
   }
 
-  private getCookieJwtToken(key = 'JwtAuthCookie'): string | undefined {
-    return this.cookies.get(key);
+  private getStorageToken(key = 'jwtToken'): string | null {
+    return this.localStorage.getItem(key);
   }
 
   get isExpired(): boolean {

@@ -9,7 +9,9 @@ import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { COOKIES } from './shared/tokens/cookies.token';
 import Cookies from 'js-cookie';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LOCAL_STORAGE } from './shared/tokens/localStorage.token';
+import { AuthInceptor } from './shared/interceptors/http-interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +32,15 @@ import { HttpClientModule } from '@angular/common/http';
     {
       provide: COOKIES,
       useValue: Cookies,
+    },
+    {
+      provide: LOCAL_STORAGE,
+      useValue: window.localStorage,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInceptor,
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],

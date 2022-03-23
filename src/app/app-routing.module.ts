@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard/:guildId',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./modules/dashboard/guild-details/guild-details.module').then(
         (mod) => mod.GuildDetailsModule
