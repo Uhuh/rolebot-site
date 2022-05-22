@@ -12,6 +12,10 @@ import Cookies from 'js-cookie';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LOCAL_STORAGE } from './shared/tokens/localStorage.token';
 import { AuthInceptor } from './shared/interceptors/http-interceptor';
+import {
+  NgxGoogleAnalyticsModule,
+  NgxGoogleAnalyticsRouterModule,
+} from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +31,8 @@ import { AuthInceptor } from './shared/interceptors/http-interceptor';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    NgxGoogleAnalyticsModule.forRoot('G-J9V0P4S4H7'),
+    NgxGoogleAnalyticsRouterModule,
   ],
   providers: [
     {
