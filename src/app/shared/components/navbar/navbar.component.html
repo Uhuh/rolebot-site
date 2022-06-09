@@ -22,7 +22,7 @@
         target="_blank">
         Invite
       </a>
-      <a *ngIf="!isFresh"
+      <a *ngIf="!isFresh && enabled"
         href="https://discord.com/api/oauth2/authorize?client_id=908407557951987742&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Fdashboard&response_type=code&scope=guilds%20identify">
         Login
       </a>

@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
   active = false;
   scrolled = false;
   isFresh = false;
+  enabled = false;
 
   constructor(private readonly jwtService: JwtService) {}
 
