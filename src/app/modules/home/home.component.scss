@@ -103,8 +103,11 @@
 .text-group {
   display: flex;
   flex-direction: column;
-  text-align: justify;
-  text-justify: inter-word;
+
+  h1 {
+    color: var(--discord-red);
+    font-weight: 700;
+  }
 
   @media (max-width: 650px) {
     p {

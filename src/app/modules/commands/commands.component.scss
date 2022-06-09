@@ -16,12 +16,10 @@
 .command-list {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   margin: auto;
-  @media (min-width: 300px) and (max-width: 1250px) {
-    flex-direction: column;
-  }
 }
 
 .command-header {

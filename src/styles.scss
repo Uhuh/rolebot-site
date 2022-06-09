@@ -37,6 +37,18 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: clamp(35px, 5vw, 40px);
+}
+
+p {
+  font-size: clamp(16px, 3vw, 22px) !important;
+}
+
+.discord-red {
+  color: var(--discord-red) !important;
+}
+
 .bg-banner {
   position: fixed;
   height: 100%;
