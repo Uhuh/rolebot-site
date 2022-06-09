@@ -1,16 +1,15 @@
 <div class="home-container">
   <div class="bot-info-container">
-    <img class="bot-avatar" src="./assets/logo.jpg" />
-    <span>RoleBot</span>
+    <img class="banner" src="./assets/logos/rolebot-logo-with-name-white.svg" alt="rolebot logo banner" />
   </div>
   <div class="banner-text">
-    <h2>Let RoleBot do the hard work for you.</h2>
+    <h1>Let RoleBot do the hard work for you.</h1>
     <p>Create react roles that RoleBot will manage for you.</p>
   </div>
   <div class="description-container">
     <div class="description grid">
       <div class="text-group">
-        <h2>Categories</h2>
+        <h1>Categories</h1>
         <p>
           Keep your react roles organized by creating a category! Categories
           help keep track of where react roles are and how you want users to
@@ -18,21 +17,21 @@
           category? Make them mutually-exclusive!
         </p>
       </div>
-      <img src="./assets/examples/category.png" />
+      <img src="./assets/examples/category.png" alt="react role categories example" />
     </div>
     <div class="description grid">
       <div class="text-group">
-        <h2>React Roles</h2>
+        <h1>React Roles</h1>
         <p>
           It's easy to create react roles. Make fancy react roles with your
           servers custom emojis, or use the default Discord ones!
         </p>
       </div>
-      <img class="col-left" src="./assets/examples/react-role.png" />
+      <img class="col-left" src="./assets/examples/react-role.png" alt="react role example" />
     </div>
     <div class="description grid">
       <div class="text-group">
-        <h2>Reactions</h2>
+        <h1>Reactions</h1>
         <p>
           It's always recommended to use RoleBot's default embeds when using
           react roles. It puts all your categories and their react roles in a
@@ -40,22 +39,20 @@
           send the embeds to any channel you desire.
         </p>
       </div>
-      <app-category-card
-        title="Colors"
-        description="Want to be a specific color?"
-        [reactRoles]="reactRoles"
-      ></app-category-card>
+      <app-category-card class="category-card" title="Colors" description="Want to be a specific color?"
+        [reactRoles]="reactRoles">
+      </app-category-card>
     </div>
     <div class="description grid">
       <div class="text-group">
-        <h2>Custom messages</h2>
+        <h1>Custom messages</h1>
         <p>
           Use <span class="slash-command">/react-message</span>
           when you want RoleBot to react to with a specific category to a custom
           message!
         </p>
       </div>
-      <img class="col-left" src="./assets/examples/message.png" />
+      <img class="col-left" src="./assets/examples/message.png" alt="react role message example" />
     </div>
   </div>
 </div>

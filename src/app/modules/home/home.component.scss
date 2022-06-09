@@ -1,27 +1,22 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
-  background-image: var(--banner-default);
-  background-size: cover;
-
-  @media (min-width: 300px) and (max-width: 1200px) {
-    background-position: right;
-  }
 }
 
-.bot-avatar {
-  animation: spin 0.7s;
-  height: 180px;
-  width: 180px;
+.banner {
+  animation: popIn 0.7s;
+  width: clamp(300px, 40vw, 1200px);
+  margin: 5vh auto;
 }
 
 .bot-info-container {
-  animation: popIn 0.4s;
+  animation: popIn 0.7s;
+
   display: flex;
   gap: 20px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: 2rem;
 }
 
@@ -29,12 +24,18 @@
   padding: 40px 0;
   margin: 60px 0;
 
+  p {
+    color: var(--grey-text-fade);
+  }
+
+  h1 {
+    margin-bottom: 5px !important;
+  }
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-color: var(--accent-color);
 
   @media (min-width: 300px) and (max-width: 1200px) {
     padding: 20px;
@@ -56,9 +57,10 @@
 }
 
 .description {
-  margin: 0 20%;
+  margin: 0 20vw;
   gap: 20px;
   img {
+    margin-top: 1rem;
     border-radius: 15px;
     width: 100%;
   }
@@ -69,10 +71,8 @@
 
 .grid {
   display: grid;
-  grid-gap: 60px;
-  grid-column-gap: 130px;
-  align-items: center;
   justify-content: center;
+  gap: 50px;
   grid-template-columns: repeat(2, 1fr);
   order: 0;
 
@@ -89,6 +89,10 @@
   }
 }
 
+.category-card {
+  margin-top: 1rem;
+}
+
 .col-left {
   order: -1;
   @media (min-width: 300px) and (max-width: 1000px) {
@@ -99,6 +103,9 @@
 .text-group {
   display: flex;
   flex-direction: column;
+  text-align: justify;
+  text-justify: inter-word;
+
   @media (max-width: 650px) {
     p {
       font-size: 1rem !important;
@@ -111,14 +118,14 @@
 }
 
 .banner-text, .text-group {
-  h2 {
-    margin: 10px 0;
+  h1 {
+    margin: 20px 0;
   }
   p {
     font-size: 1.15rem;
     margin: 0;
     padding: 0;
-    font-weight: 700;
+    color: var(--off-white);
   }
 }
 

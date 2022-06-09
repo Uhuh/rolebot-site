@@ -1,8 +1,12 @@
+:host {
+  z-index: 1;
+}
+
 footer {
   display: flex;
   margin: auto;
   padding: 0.8rem 0 3rem  0;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   @media (max-width: 600px) {
     flex-direction: column;
   }
