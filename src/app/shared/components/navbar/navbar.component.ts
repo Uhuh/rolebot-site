@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest } from 'rxjs';
 import { JwtService } from '../../services/jwtHandler.service';
 
 @Component({
@@ -9,6 +8,7 @@ import { JwtService } from '../../services/jwtHandler.service';
 })
 export class NavbarComponent implements OnInit {
   active = false;
+  scrolled = false;
   isFresh = false;
 
   constructor(private readonly jwtService: JwtService) {}

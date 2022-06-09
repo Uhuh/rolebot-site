@@ -1,9 +1,20 @@
 :host {
+  z-index: 10;
   transition: all 0.2s ease;
+  margin: 0 auto;
+  width: clamp(350px, 95vw, 1200px);
+
+  top: 0;
+  position: sticky;
+
+  a {
+    color: var(--white);
+    font-size: clamp(18px, 1.1vw, 22px);
+  }
 
   .collapsed {
     transition: all 0.2s ease;
-    @media (max-width: 650px) {
+    @media (max-width: 830px) {
       max-height: 0;
       overflow: hidden;
       opacity: 0;
@@ -13,30 +24,39 @@
 
   .collapsable {
     transition: all 0.2s ease;
-    @media (max-width: 650px) {
+    @media (max-width: 830px) {
       display: flex;
-      max-height: 300px;
+      max-height: 500px;
     }
   }
 }
 
-
 .navbar-container {
+  border-radius: 10px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 
   padding: 20px 35px;
-  margin: 0;
+  margin: 10px 0;
 
-  background-color: var(--accent-color);
-  a {
-    color: var(--white);
-    font-weight: 700;
-    &:hover {
-      color: var(--third-color)
-    }
+  transition: 0.4s all;
+}
+
+.invite-btn {
+  background-color: var(--discord-red) !important;
+  color: black !important;
+  &:hover {
+    background-color: rgba(var(--rolebot-red), 0.5);
   }
+}
+
+.scrolled {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: 0.4s all;
+  margin: 10px 10px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .ml-auto {
@@ -50,7 +70,17 @@
 .links {
   display: flex;
   align-items: center;
-  @media (max-width: 650px) {
+  gap: 20px;
+
+  a {
+    padding: 4px 12px;
+    border-radius: 5px;
+    &:hover {
+      background-color: var(--grey-fade);
+    }
+  }
+
+  @media (max-width: 830px) {
     font-size: 0.8rem;
     flex-direction: column;
     margin-left: 0;
@@ -59,15 +89,6 @@
     flex-basis: 100%;
   }
 }
-
-
-
-.user-avatar {
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
-}
-
 
 /* Codepen hamburger CSS */
 /* Icon 1 */
@@ -80,7 +101,7 @@
   transition: .5s ease-in-out;
   cursor: pointer;
 
-  @media (min-width: 650px) {
+  @media (min-width: 830px) {
     display: none;
     cursor: none;
   }
