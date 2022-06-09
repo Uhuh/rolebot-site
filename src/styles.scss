@@ -1,25 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Open+Sans&family=Raleway&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary-color: #1f4141;
-  --secondary-color: #0a191e;
-  --accent-color: #123133;
-  --background-color: #173F44;
+  --primary-color: #0a2733;
+  --secondary-color: #073b4c;
+  --accent-color: #0a2733;
+  --background-color: #0a2733;
   --third-color: #fb0735;
+  
   --discord-theme: #36393f;
   --discord-embed-theme: #2f3136;
   --discord-red: #ED4245;
   --blurple: #5865f2;
+  
   --rolebot-red: #d62658;
-  --grey: #778899;
+
+  --grey: #808080;
+  --grey-fade: #8080802a;
+
+  --grey-text-fade: #969292e3;
+
   --white: #F0EDE4;
+  --off-white: #D3D3D3;
+
   --bot-avatar: url("./assets/logo.jpg");
   --banner-default: url("./assets/banners/banner-logoless.svg");
   --banner-white: url("./assets/banners/banner.png");
   font-size: 125%;
+  font-family: 'Chelsea Market', cursive;
+
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 * {
   box-sizing: border-box;
+}
+
+.bg-banner {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: url("./assets/banners/3d.png");
+  background-size: cover;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+html {
+  height: 100%;
 }
 
 body, html {
@@ -27,13 +56,12 @@ body, html {
   padding: 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
-  background-color: var(--secondary-color);
-  color: var(--white);
+  flex: 1;
+  background-color: rgba(#073b4c, 0.7);
 
+  color: var(--white);
   font-weight: 400;
-  font-family: Arial, sans-serif;
 }
 
 a {
@@ -93,6 +121,7 @@ a {
 
   p {
     margin: 0;
+    color: var(--off-white);
   }
 
   &::before {
