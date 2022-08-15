@@ -1,5 +1,9 @@
 name: Build and S3 deploy
-on: [push]
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   run:
     runs-on: ubuntu-latest
