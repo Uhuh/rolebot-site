@@ -1,8 +1,7 @@
 :host {
   z-index: 10;
-  transition: all 0.2s ease;
   margin: 0 auto;
-  width: clamp(350px, 95vw, 1200px);
+  width: 100%;
 
   top: 0;
   position: sticky;
@@ -11,53 +10,30 @@
     color: var(--white);
     font-size: clamp(18px, 1.1vw, 22px);
   }
+}
 
-  .collapsed {
-    transition: all 0.2s ease;
-    @media (max-width: 830px) {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      padding: 0;
-    }
-  }
-
-  .collapsable {
-    transition: all 0.2s ease;
-    @media (max-width: 830px) {
-      display: flex;
-      max-height: 500px;
-    }
-  }
+.navbar-logo {
+  height: 64px;
+  width: 64px;
 }
 
 .navbar-container {
-  border-radius: 10px;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 
-  padding: 20px 35px;
-  margin: 10px 0;
-
-  transition: 0.4s all;
+  padding: 10px;
 }
 
 .invite-btn {
   background-color: var(--discord-red) !important;
   color: black !important;
   &:hover {
-    background-color: rgba(var(--rolebot-red), 0.5);
+    background-color: var(--rolebot-red);
   }
 }
 
-.scrolled {
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  transition: 0.4s all;
-  margin: 10px 10px;
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
-}
 
 .ml-auto {
   margin-left: auto;
@@ -70,6 +46,7 @@
 .links {
   display: flex;
   align-items: center;
+  margin-left: 10rem;
   gap: 20px;
 
   a {
@@ -80,13 +57,21 @@
     }
   }
 
-  @media (max-width: 830px) {
-    font-size: 0.8rem;
-    flex-direction: column;
-    margin-left: 0;
-    padding-top: 20px;
-    gap: 20px;
-    flex-basis: 100%;
+  @media (max-width: 950px) {
+    display: none;
+  }
+}
+
+.sidenav-shade {
+  z-index: 12;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &.opened {
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -94,6 +79,7 @@
 /* Icon 1 */
 #nav-icon {
   margin-top: -8px;
+  margin-right: 1rem;
   width: 25px;
   height: 15px;
   position: relative;
@@ -101,7 +87,7 @@
   transition: .5s ease-in-out;
   cursor: pointer;
 
-  @media (min-width: 830px) {
+  @media (min-width: 950px) {
     display: none;
     cursor: none;
   }

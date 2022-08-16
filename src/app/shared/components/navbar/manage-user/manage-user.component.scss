@@ -2,31 +2,31 @@
   max-width: 48px;
   background: none;
   border: none;
-
-  &:hover, &:active {
-
-    max-width: auto;
-
-    .drop-down {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      background-color: #000;
-      padding: 10px;
-      margin-left: -55px;
-      text-align: left;
-
-      @media (max-width: 600px) {
-        position: unset;
-        margin: 0;
-        background-color: unset;
-      }
-    }
-  }
 }
 
 .drop-down {
+  transition: all 0.2s;
   display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--primary-color);
+  padding: 10px;
+  margin-left: -80px;
+  text-align: left;
+
+  @media (max-width: 600px) {
+    position: unset;
+    margin: 0;
+    background-color: unset;
+  }
+}
+
+.show {
+  display: flex;
+}
+
+.logout {
+
 }
 
 .user-avatar {

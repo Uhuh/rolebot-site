@@ -8,7 +8,7 @@ import { ICategory } from 'src/app/shared/types/interfaces';
   styleUrls: ['./category-form.component.scss'],
 })
 export class CategoryFormComponent implements OnInit {
-  @Input() category?: ICategory;
+  @Input() categories?: ICategory[];
   categoryForm = this.fb.group({
     name: [
       '',
@@ -17,12 +17,19 @@ export class CategoryFormComponent implements OnInit {
     description: [''],
   });
 
+  selectedCategory?: ICategory;
+
   constructor(private readonly fb: FormBuilder) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSelectChange(category: ICategory) {
+    this.selectedCategory = category;
+    console.log(category);
+
     this.categoryForm.setValue({
-      name: this.category?.name,
-      description: this.category?.description,
+      name: this.selectedCategory?.name,
+      description: this.selectedCategory?.description,
     });
   }
 

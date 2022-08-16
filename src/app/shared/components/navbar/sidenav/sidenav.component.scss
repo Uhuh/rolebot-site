@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+  z-index: 14;
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px;
+}
+
+.sidenav-wrapper {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin: 0 10px;
+  border-bottom: 1px solid var(--grey-fade);
+  img {
+    height: 64px;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: end;
+  padding: 10px 0;
+  margin: 0 10px;
+  border-top: 1px solid var(--grey-fade);
+}
+
+a {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 7px;
+  width: fit-content;
+}
+
+.close::after, .close::before {
+  content: '';
+
+}
+
+.invite-btn {
+  color: black;
+  background-color: var(--discord-red);
+}

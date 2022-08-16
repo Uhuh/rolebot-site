@@ -54,6 +54,10 @@ const routes: Routes = [
         (mod) => mod.GuildDetailsModule
       ),
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({

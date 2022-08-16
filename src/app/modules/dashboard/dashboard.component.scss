@@ -2,10 +2,6 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-image: var(--banner-default);
-  @media (min-width: 300px) and (max-width: 1200px) {
-    background-position: right;
-  }
 }
 
 .dashbaord {

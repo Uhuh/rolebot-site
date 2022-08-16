@@ -1,14 +1,11 @@
 <div class="react-role" *ngFor="let reactRole of reactRoles">
-  <img *ngIf="isCustomEmoji(reactRole)" [src]="emoji(reactRole)" />
+  <img *ngIf="isCustomEmoji(reactRole)" [src]="emoji(reactRole)" alt="discord emoji" />
   <span *ngIf="!isCustomEmoji(reactRole)"> {{ emoji(reactRole) }}</span>
   -
   <div class="role">
     <div class="text" [style.color]="reactRole.hexCode ?? '#fff'">
       @{{ reactRole.name }}
     </div>
-    <div
-      class="bg-color"
-      [style.background-color]="reactRole.hexCode ?? '#fff'"
-    ></div>
+    <div class="bg-color" [style.background-color]="reactRole.hexCode ?? '#fff'"></div>
   </div>
 </div>
