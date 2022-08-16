@@ -1,1 +1,30 @@
-<p>sidenav works!</p>
+<div class="sidenav-wrapper">
+  <div class="header">
+    <img src="assets/logos/rolebot-logo-white.svg" />
+    <div class="close"></div>
+  </div>
+  <div class="body">
+    <a routerLink="about"> About </a>
+    <a routerLink="commands"> Commands </a>
+    <a routerLink="faqs"> FAQ </a>
+    <a href="https://discord.gg/9BYN266sC4" target="_blank"> Server </a>
+    <a
+      class="invite-btn"
+      href="https://discord.com/oauth2/authorize?client_id=493668628361904139&scope=bot%20applications.commands&permissions=2416035904"
+      target="_blank"
+    >
+      Invite
+    </a>
+    <a *ngIf="enabled" routerLink="dashboard">Dashboard</a>
+    <a *ngIf="enabled" routerLink="logout">Logout</a>
+  </div>
+  <div class="footer">
+    <a
+      *ngIf="!isFresh && enabled"
+      href="https://discord.com/api/oauth2/authorize?client_id=908407557951987742&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Fdashboard&response_type=code&scope=guilds%20identify"
+    >
+      Login
+    </a>
+    <app-manage-user *ngIf="isFresh"></app-manage-user>
+  </div>
+</div>
