@@ -13,20 +13,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   destroy$ = new Subject<void>();
 
-  constructor() {
-    // I don't like this lol
-    fromEvent(window, 'scroll').pipe(takeUntil(this.destroy$)).subscribe(() => {
-      const element = document.getElementById('nav-container')
-
-      if (!element) return;
-
-      if (window.scrollY > 5) {
-        element.classList.add('scrolled')
-      } else {
-        element.classList.remove('scrolled')
-      }
-    })
-  }
+  constructor(private readonly scrollDispatcher) {}
 
   ngOnInit(): void {}
 

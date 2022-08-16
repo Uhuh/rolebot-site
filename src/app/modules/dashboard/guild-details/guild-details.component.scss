@@ -1,5 +1,7 @@
 :host {
   display: flex;
+  flex: 1 1 auto;
+
   width: 100%;
   flex-direction: column;
   background-image: var(--banner-default);
@@ -33,6 +35,7 @@
 }
 
 .category-cards {
+  display: none;
   background-color: var(--discord-theme);
   gap: 30px;
   padding: 40px;

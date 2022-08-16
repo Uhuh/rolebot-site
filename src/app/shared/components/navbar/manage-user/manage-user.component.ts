@@ -11,6 +11,7 @@ import { JwtService } from 'src/app/shared/services/jwtHandler.service';
 export class ManageUserComponent implements OnInit {
   avatar?: string;
   userId?: string;
+  show = false;
 
   constructor(
     private readonly jwtService: JwtService,
@@ -28,5 +29,9 @@ export class ManageUserComponent implements OnInit {
 
   signOut() {
     this.authService.signOut();
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 }

@@ -1,29 +1,43 @@
 <nav>
-  <div id="nav-container" class="navbar-container">
+  <div [@scrolled]="animationState" class="navbar-container">
     <div>
-      <a routerLink=""> RoleBot </a>
+      <a routerLink="">
+        <img
+          class="navbar-logo"
+          src="assets/logos/rolebot-logo-white.png"
+          alt="rolebot logo white"
+        />
+      </a>
     </div>
-    <div [className]="active ? 'ml-auto open' : 'ml-auto'" id="nav-icon" (click)="toggleMobileMenu()">
+    <div
+      [className]="active ? 'ml-auto open' : 'ml-auto'"
+      id="nav-icon"
+      (click)="toggleMobileMenu()"
+    >
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <div [className]="
-        active ? 'ml-auto links collapsable' : 'ml-auto links collapsed'
-      ">
+    <div [className]="active ? 'links collapsable' : 'links collapsed'">
       <a class="plr-5" routerLink="about"> About </a>
       <a class="plr-5" routerLink="commands"> Commands </a>
       <a class="plr-5" routerLink="faqs"> FAQ </a>
       <a class="plr-5" href="https://discord.gg/9BYN266sC4" target="_blank">
         Server
       </a>
-      <a class="plr-5 invite-btn"
+      <a
+        class="plr-5 invite-btn"
         href="https://discord.com/oauth2/authorize?client_id=493668628361904139&scope=bot%20applications.commands&permissions=2416035904"
-        target="_blank">
+        target="_blank"
+      >
         Invite
       </a>
-      <a *ngIf="!isFresh && enabled"
-        href="https://discord.com/api/oauth2/authorize?client_id=908407557951987742&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Fdashboard&response_type=code&scope=guilds%20identify">
+    </div>
+    <div class="ml-auto">
+      <a
+        *ngIf="!isFresh && enabled"
+        href="https://discord.com/api/oauth2/authorize?client_id=908407557951987742&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Fdashboard&response_type=code&scope=guilds%20identify"
+      >
         Login
       </a>
       <app-manage-user *ngIf="isFresh"></app-manage-user>

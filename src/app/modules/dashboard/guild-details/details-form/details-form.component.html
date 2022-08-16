@@ -1,4 +1,13 @@
-<app-category-form
-  *ngFor="let category of categories"
-  [category]="category"
-></app-category-form>
+<div class="details-container">
+  <div class="details-header">
+    <h3>Select a category.</h3>
+  </div>
+
+  <hr>
+
+
+
+  <app-category-form [categories]="categories">
+
+  </app-category-form>
+</div>

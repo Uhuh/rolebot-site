@@ -6,10 +6,10 @@ import { ICategory } from 'src/app/shared/types/interfaces';
   templateUrl: './details-form.component.html',
   styleUrls: ['./details-form.component.scss'],
 })
-export class DetailsFormComponent implements OnInit {
+export class DetailsFormComponent {
   @Input() categories: ICategory[] = [];
 
-  constructor() {}
+  selectedCategory?: ICategory;
 
-  ngOnInit(): void {}
+  constructor() {}
 }

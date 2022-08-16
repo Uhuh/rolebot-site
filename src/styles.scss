@@ -7,12 +7,12 @@
   --accent-color: #0a2733;
   --background-color: #0a2733;
   --third-color: #fb0735;
-  
+
   --discord-theme: #36393f;
   --discord-embed-theme: #2f3136;
   --discord-red: #ED4245;
   --blurple: #5865f2;
-  
+
   --rolebot-red: #d62658;
 
   --grey: #808080;
@@ -168,6 +168,10 @@ a {
 }
 .slideInUp {
   animation: slideUp 0.7s;
+}
+
+.flex {
+  display: flex;
 }
 
 @keyframes popIn {
