@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { fromEvent, Subject, takeUntil } from 'rxjs';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +11,16 @@ export class AppComponent implements OnInit, OnDestroy {
     window.scroll(0, 0);
   }
 
+  @HostListener('document:scroll', ['$event.srcElement.scrollingElement'])
+  handleSroll(event: any) {
+    this.scrollTop = event?.scrollTop ?? 0;
+  }
+
   destroy$ = new Subject<void>();
 
-  constructor(private readonly scrollDispatcher) {}
+  scrollTop = 0;
+
+  constructor() {}
 
   ngOnInit(): void {}
 

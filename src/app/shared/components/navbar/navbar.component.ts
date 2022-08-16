@@ -21,20 +21,39 @@ import { JwtService } from '../../services/jwtHandler.service';
   animations: [
     trigger('scrolled', [
       state('top', style({})),
-      state('scrolled', style({})),
-      transition('top => scrolled', animate('400ms ease')),
-      transition('scrolled => top', animate('400ms ease')),
+      state(
+        'scrolled',
+        style({
+          backgroundColor: 'var(--primary-color)',
+        })
+      ),
+      transition('top <=> scrolled', animate('400ms ease')),
+    ]),
+    trigger('sidenav', [
+      state(
+        'out',
+        style({
+          marginRight: '-400px',
+        })
+      ),
+      state(
+        'in',
+        style({
+          marginRight: '0px',
+        })
+      ),
     ]),
   ],
 })
 export class NavbarComponent implements OnInit, OnChanges {
-  @Input() scrollingElement?: HTMLElement;
+  @Input() scrollTop?: number;
 
   animationState = 'top';
+  sideNavState = 'out';
 
-  active = false;
+  openSideNav = false;
   isFresh = false;
-  enabled = true;
+  enabled = false;
 
   constructor(private readonly jwtService: JwtService) {}
 
@@ -43,11 +62,11 @@ export class NavbarComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['scrollingNativeElement'].currentValue) {
-      this.animationState =
-        this.scrollingElement?.scrollTop ?? 0 > 20 ? 'scrolled' : 'top';
-    }
+    this.animationState = this.scrollTop ?? 0 > 20 ? 'scrolled' : 'top';
   }
 
-  toggleMobileMenu = () => (this.active = !this.active);
+  toggleSideNav = () => {
+    this.openSideNav = !this.openSideNav;
+    this.sideNavState = this.sideNavState === 'in' ? 'out' : 'in';
+  };
 }
