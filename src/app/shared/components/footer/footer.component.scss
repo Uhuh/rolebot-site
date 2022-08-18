@@ -5,24 +5,29 @@
 footer {
   display: flex;
   margin: auto;
-  padding: 0.8rem 0 3rem  0;
-  background-color: var(--primary-color);
+  padding-top: 0.8rem;
+  padding-bottom: 3rem;
+  font-size: 17px;
+
+  background-color: var(--rolebot-green);
+
   @media (max-width: 600px) {
     flex-direction: column;
+    padding-top: 0.1rem;
+    padding-bottom: 0.3rem;
   }
 }
 
 a {
   color: var(--white);
   opacity: 0.8;
-  font-weight: 700;
   &:hover {
     opacity: 1;
   }
 }
 
 .logo {
-  @media(max-width: 650px) {
+  @media(max-width: 600px) {
     max-width: fit-content;
   }
 }
@@ -34,12 +39,14 @@ a {
   width: 100%;
   margin: 20px auto;
   max-width: 1280px;
-  @media (max-width: 650px) {
+
+  @media (max-width: 600px) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  @media (min-width: 650px) and (max-width: 1250px) {
+
+  @media (min-width: 600px) and (max-width: 1250px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -50,9 +57,10 @@ a {
   display: flex;
   gap: 60px;
   margin: auto;
-  @media (max-width: 650px) {
+
+  @media (max-width: 600px) {
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
   }
   @media (min-width: 300px) and (max-width: 1250px) {
     margin: 20px auto;
