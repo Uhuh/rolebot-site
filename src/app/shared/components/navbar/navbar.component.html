@@ -1,5 +1,5 @@
 <nav>
-  <div [@scrolled]="animationState" class="navbar-container">
+  <div class="navbar-container">
     <div>
       <a routerLink="">
         <img
@@ -19,12 +19,10 @@
       <span></span>
     </div>
     <div class="links">
-      <a class="plr-5" routerLink="about"> About </a>
-      <a class="plr-5" routerLink="commands"> Commands </a>
-      <a class="plr-5" routerLink="faqs"> FAQ </a>
-      <a class="plr-5" href="https://discord.gg/9BYN266sC4" target="_blank">
-        Server
-      </a>
+      <a routerLink="about"> About </a>
+      <a routerLink="commands"> Commands </a>
+      <a routerLink="faqs"> FAQ </a>
+      <a href="https://discord.gg/9BYN266sC4" target="_blank"> Server </a>
       <a
         class="plr-5 invite-btn"
         href="https://discord.com/oauth2/authorize?client_id=493668628361904139&scope=bot%20applications.commands&permissions=2416035904"

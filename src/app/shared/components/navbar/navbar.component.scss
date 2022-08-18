@@ -22,18 +22,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-color: var(--rolebot-green);
 
   padding: 10px;
 }
-
-.invite-btn {
-  background-color: var(--discord-red) !important;
-  color: black !important;
-  &:hover {
-    background-color: var(--rolebot-red);
-  }
-}
-
 
 .ml-auto {
   margin-left: auto;
@@ -50,8 +42,18 @@
   gap: 20px;
 
   a {
-    padding: 4px 12px;
+    padding: 7px 15px;
     border-radius: 5px;
+
+    &.invite-btn {
+      background-color: var(--white);
+      color: var(--rolebot-green);
+      &:hover {
+        color: var(--white);
+        background-color: var(--secondary-color);
+      }
+    }
+
     &:hover {
       background-color: var(--grey-fade);
     }

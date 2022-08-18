@@ -11,14 +11,7 @@ export class AppComponent implements OnInit, OnDestroy {
     window.scroll(0, 0);
   }
 
-  @HostListener('document:scroll', ['$event.srcElement.scrollingElement'])
-  handleSroll(event: any) {
-    this.scrollTop = event?.scrollTop ?? 0;
-  }
-
   destroy$ = new Subject<void>();
-
-  scrollTop = 0;
 
   constructor() {}
 

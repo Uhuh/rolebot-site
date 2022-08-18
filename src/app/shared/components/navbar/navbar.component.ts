@@ -5,13 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JwtService } from '../../services/jwtHandler.service';
 
 @Component({
@@ -19,21 +13,11 @@ import { JwtService } from '../../services/jwtHandler.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   animations: [
-    trigger('scrolled', [
-      state('top', style({})),
-      state(
-        'scrolled',
-        style({
-          backgroundColor: 'var(--primary-color)',
-        })
-      ),
-      transition('top <=> scrolled', animate('400ms ease')),
-    ]),
     trigger('sidenav', [
       state(
         'out',
         style({
-          marginRight: '-400px',
+          marginRight: '-1000px',
         })
       ),
       state(
@@ -42,13 +26,12 @@ import { JwtService } from '../../services/jwtHandler.service';
           marginRight: '0px',
         })
       ),
+      transition('out => in', animate('500ms ease')),
+      transition('in => out', animate('200ms ease')),
     ]),
   ],
 })
-export class NavbarComponent implements OnInit, OnChanges {
-  @Input() scrollTop?: number;
-
-  animationState = 'top';
+export class NavbarComponent implements OnInit {
   sideNavState = 'out';
 
   openSideNav = false;
@@ -59,10 +42,6 @@ export class NavbarComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.jwtService.isFresh$.subscribe((isFresh) => (this.isFresh = !!isFresh));
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.animationState = this.scrollTop ?? 0 > 20 ? 'scrolled' : 'top';
   }
 
   toggleSideNav = () => {

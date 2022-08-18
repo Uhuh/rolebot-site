@@ -1,19 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Open+Sans&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary-color: #0a2733;
+  --rolebot-green-fade: #0a273330;
   --secondary-color: #073b4c;
-  --accent-color: #0a2733;
-  --background-color: #0a2733;
-  --third-color: #fb0735;
 
+  --rolebot-red: #FD2946;
+  --rolebot-green: #0a2733;
+
+  // For custom embeds
   --discord-theme: #36393f;
   --discord-embed-theme: #2f3136;
-  --discord-red: #ED4245;
   --blurple: #5865f2;
-
-  --rolebot-red: #d62658;
 
   --grey: #808080;
   --grey-fade: #8080802a;
@@ -26,11 +24,14 @@
   --bot-avatar: url("./assets/logo.jpg");
   --banner-default: url("./assets/banners/banner-logoless.svg");
   --banner-white: url("./assets/banners/banner.png");
+  --logoless-banner-dark: url("./assets/banners/dark-banner-logoless.svg");
+
   font-size: 125%;
-  font-family: 'Chelsea Market', cursive;
+  font-family: 'Roboto', sans-serif;
+}
 
-  font-family: 'Open Sans', sans-serif;
-
+.rolebot-red {
+  color: var(--rolebot-red);
 }
 
 * {
@@ -45,21 +46,10 @@ p {
   font-size: clamp(16px, 3vw, 22px) !important;
 }
 
-.discord-red {
-  color: var(--discord-red) !important;
-}
 
-.bg-banner {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background: url("./assets/banners/3d.png");
-  background-size: cover;
-  filter: blur(6px);
-  z-index: -1;
-}
 
 html {
+  scroll-behavior: smooth;
   height: 100%;
 }
 
@@ -74,6 +64,14 @@ body, html {
 
   color: var(--white);
   font-weight: 400;
+}
+
+code {
+  margin-top: 0.5rem;
+  width: fit-content;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 a {
@@ -95,22 +93,6 @@ a {
   border: 3px solid var(--white);
   height: 128px;
   width: 128px;
-}
-
-.slash-command {
-  background-color: var(--accent-color);
-  color: white;
-  padding:2px 8px;
-  border-radius: 5px;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h1 {
-    margin: 0;
-  }
 }
 
 .text-group-container {
