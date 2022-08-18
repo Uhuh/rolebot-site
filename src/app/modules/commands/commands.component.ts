@@ -12,7 +12,14 @@ export class CommandsComponent implements OnInit {
   reactCommands: ISlashCommand[] = commands['react'] ?? [];
   generalCommands: ISlashCommand[] = commands['general'] ?? [];
 
+  categories = ['reaction', 'category', 'general'];
+  activeItem = this.categories[0]; // Default to first item.
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  setActiveItem(item: string) {
+    this.activeItem = item;
+  }
 }

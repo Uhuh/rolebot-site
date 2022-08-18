@@ -3,3 +3,12 @@
   flex-direction: column;
   height: 100%;
 }
+
+.bg-banner {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: var(--logoless-banner-dark);
+  background-size: cover;
+  z-index: -1;
+}

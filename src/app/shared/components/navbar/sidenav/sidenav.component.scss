@@ -1,7 +1,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  transition: 0.3s ease;
   z-index: 14;
   position: fixed;
 
@@ -15,7 +14,7 @@
   display: flex;
   justify-content: end;
   flex-direction: column;
-  background-color: var(--primary-color);
+  background-color: var(--rolebot-green);
   justify-content: space-between;
   height: 100%;
 }
@@ -61,5 +60,5 @@ a {
 
 .invite-btn {
   color: black;
-  background-color: var(--discord-red);
+  background-color: var(--rolebot-red);
 }
