@@ -1,29 +1,97 @@
 :host {
   display: flex;
-  flex: 1 1 auto;
+  justify-content: center;
 }
 
 .command-container {
   display: flex;
+  padding: 0 5rem;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+.nav-wrapper {
+  display: flex;
   flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
+  position: sticky;
+  top: 8rem;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--rolebot-green);
+
+  h1 {
+    font-size: 26px;
+    align-self: center;
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  a {
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--white);
+
+    &.active:hover, &:hover {
+      background-color: var(--grey-fade);
+    }
+
+    &.active {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  @media (max-width: 600px) {
+    position: unset;
+  }
+}
+
+.top {
+  text-align: center;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: 40px;
-  margin-bottom: 3rem;
+}
+
+.up-arrow {
+  border: solid var(--white);
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  display: inline-block;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
 }
 
 .command-list {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin: auto;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem;
+
+  @media (max-width: 950px) {
+    margin-top: 2rem;
+    padding: 10px 0;
+    gap: 3rem;
+  }
 }
 
 .command-header {
-  width: 100%;
+  width: fit-content;
+  scroll-margin-top: 8rem;
+  margin: 0;
+  margin-bottom: 1rem;
+
+  font-size: 1.3rem;
+  color: var(--white);
+  border-bottom: 2px solid var(--rolebot-red);
+
+  @media (max-width: 600px) {
+    scroll-margin-top: 5rem;
+  }
 }
 
 .commands {
@@ -31,3 +99,5 @@
   flex-direction: column;
   gap: 10px;
 }
+
+
