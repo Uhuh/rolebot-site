@@ -1,20 +1,17 @@
-<div *ngIf="slashCommand" class="accordion-item">
-  <div class="command-title" (click)="toggleContent()">
-    <div class="command-header">
+<div *ngIf="slashCommand" class="accordion-item" (click)="toggleOpenClosed()">
+  <div class="command-title">
+    <div [ngClass]="{ 'command-header': true, closed: active }">
       <h2>{{ slashCommand.title }}</h2>
       <span>{{ slashCommand.description }}</span>
     </div>
-    <span
-      [className]="active ? 'command-title opened' : 'command-title closed'"
-    ></span>
   </div>
-  <div
-    [className]="active ? 'command-description active' : 'command-description'"
-  >
-    <hr />
-    <strong>Usage: </strong>
-    <p>{{ slashCommand.usage }}</p>
-    <strong>Description: </strong>
-    <p>{{ slashCommand.detailedDescription }}</p>
+  <div [@openClose]="openClosedState" class="command-description">
+    <p>
+      <i>{{ slashCommand.detailedDescription }}</i>
+    </p>
+    <div class="usage">
+      <strong>Usage: </strong>
+      <code>{{ slashCommand.usage }}</code>
+    </div>
   </div>
 </div>
