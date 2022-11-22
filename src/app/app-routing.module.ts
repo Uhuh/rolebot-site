@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  RouterModule,
+  RouterStateSnapshot,
+  Routes,
+} from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
@@ -34,8 +39,15 @@ const routes: Routes = [
   },
   {
     path: 'invite',
-    redirectTo:
-      'https://discord.com/oauth2/authorize?client_id=741682757486510081&scope=bot%20applications.commands&permissions=2416035904',
+    loadChildren: () =>
+      import('./modules/home/home.module').then((mod) => mod.HomeModule),
+    resolve: {
+      url: 'externalRedirect',
+    },
+    data: {
+      externalUrl:
+        'https://discord.com/oauth2/authorize?client_id=741682757486510081&scope=bot%20applications.commands&permissions=2416035904',
+    },
   },
   {
     path: 'presets',
@@ -68,5 +80,13 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [
+    {
+      provide: 'externalRedirect',
+      useValue: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+        window.location.href = (route.data as any).externalUrl;
+      },
+    },
+  ],
 })
 export class AppRoutingModule {}
