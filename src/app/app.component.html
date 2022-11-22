@@ -1,4 +1,16 @@
 <app-navbar></app-navbar>
+<div class="new-bot">
+  <fa-icon [icon]="faIcon"></fa-icon>
+  <div>
+    If you use RoleBot,
+    <a
+      href="https://discord.com/oauth2/authorize?client_id=741682757486510081&scope=bot%20applications.commands&permissions=2416035904&response_type=code&redirect_uri=https://rolebot.gg/"
+    >
+      please invite the new one.
+    </a>
+  </div>
+  <div>This is due to Discord issues.</div>
+</div>
 <div class="bg-banner"></div>
 <router-outlet (activate)="onActivate()"></router-outlet>
 <app-footer></app-footer>

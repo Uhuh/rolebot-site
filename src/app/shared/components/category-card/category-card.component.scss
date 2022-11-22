@@ -4,6 +4,7 @@
 }
 
 .category-card-container {
+  width: 100%;
   padding: 20px;
   border-radius: 10px;
   background-color: var(--discord-theme);
@@ -33,6 +34,7 @@
 .category-card {
   display: flex;
   flex-direction: column;
+  border-left: 3px solid red;
 
   gap: 15px;
   max-width: 350px;
@@ -40,7 +42,6 @@
   border-radius: 3px;
   padding: 20px 15px 15px;
   background-color: var(--discord-embed-theme);
-  border-left: solid var(--discord-red) 5px;
 }
 
 .category-title {

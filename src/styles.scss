@@ -132,6 +132,10 @@ a {
   }
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .grey {
   color: var(--grey);
   p {

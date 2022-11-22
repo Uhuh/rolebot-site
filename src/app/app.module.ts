@@ -16,6 +16,7 @@ import {
   NgxGoogleAnalyticsModule,
   NgxGoogleAnalyticsRouterModule,
 } from 'ngx-google-analytics';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import {
     }),
     NgxGoogleAnalyticsModule.forRoot('G-J9V0P4S4H7'),
     NgxGoogleAnalyticsRouterModule,
+    FontAwesomeModule,
   ],
   providers: [
     {
