@@ -33,6 +33,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'invite',
+    redirectTo:
+      'https://discord.com/oauth2/authorize?client_id=493668628361904139&scope=bot%20applications.commands&permissions=2416035904',
+  },
+  {
     path: 'presets',
     loadChildren: () =>
       import('./modules/category-store/category-store.module').then(
