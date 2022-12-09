@@ -143,6 +143,13 @@ a {
   }
 }
 
+.off-white {
+  color: var(--off-white);
+  p {
+    margin: 10px 0;
+  }
+}
+
 .slideInLeft {
   animation: slideLeft 0.7s;
 }

@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex: 1;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 40px;
+
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 300px) and (max-width: 1200px) {
+    gap: 30px;
+  }
+
+  ul {
+    list-style: decimal;
+  }
+}

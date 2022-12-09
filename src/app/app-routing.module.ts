@@ -38,6 +38,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'terms',
+    loadChildren: () =>
+      import('./modules/terms/terms.module').then((mod) => mod.TermsModule),
+  },
+  {
     path: 'invite',
     loadChildren: () =>
       import('./modules/home/home.module').then((mod) => mod.HomeModule),
