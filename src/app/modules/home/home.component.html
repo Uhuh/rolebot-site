@@ -50,36 +50,41 @@
         <div class="descriptor">
           <h1>Reactions</h1>
           <p>
-            It's always recommended to use Role<span class="discord-red"
-              >Bot</span
-            >'s default embeds when using react roles. It puts all your
-            categories and their react roles in a single place! Use
-            <code>/react-channel</code> to send the embeds to any channel you
+            It's always recommended to use
+            <span>Role<span class="rolebot-red">Bot</span>'s</span>
+            default embeds when using react roles. It puts all your categories
+            and their react roles in a single place! Use
+            <code>/react channel</code> to send the embeds to any channel you
             desire.
           </p>
         </div>
-        <app-category-card
-          class="category-card"
-          title="Colors"
-          description="Want to be a specific color?"
-          [reactRoles]="reactRoles"
-        >
-        </app-category-card>
+        <app-discord></app-discord>
       </div>
       <div class="description grid">
         <div class="descriptor">
           <h1>Custom messages</h1>
           <p>
-            Use <code>/react-message</code>
+            Use <code>/react message</code>
             when you want RoleBot to react to with a specific category to a
             custom message!
           </p>
         </div>
-        <img
-          class="col-left"
-          src="./assets/examples/message.png"
-          alt="react role message example"
-        />
+        <discord-messages>
+          <discord-message profile="panku">
+            Wanna be annoyed with pings? React to get
+            <discord-mention type="role" color="#70f0b4">
+              Announcements
+            </discord-mention>
+            <discord-reactions slot="reactions">
+              <discord-reaction
+                name="👀"
+                emoji="../assets/eyes.svg"
+                count="2"
+                reacted
+              ></discord-reaction>
+            </discord-reactions>
+          </discord-message>
+        </discord-messages>
       </div>
     </div>
   </div>

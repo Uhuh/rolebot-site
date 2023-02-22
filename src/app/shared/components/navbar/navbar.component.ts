@@ -6,7 +6,6 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { JwtService } from '../../services/jwtHandler.service';
 
 @Component({
   selector: 'app-navbar',
@@ -35,14 +34,10 @@ export class NavbarComponent implements OnInit {
   sideNavState = 'out';
 
   openSideNav = false;
-  isFresh = false;
-  enabled = false;
 
-  constructor(private readonly jwtService: JwtService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.jwtService.isFresh$.subscribe((isFresh) => (this.isFresh = !!isFresh));
-  }
+  ngOnInit(): void {}
 
   toggleSideNav = () => {
     this.openSideNav = !this.openSideNav;

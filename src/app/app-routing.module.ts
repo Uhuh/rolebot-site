@@ -5,7 +5,6 @@ import {
   RouterStateSnapshot,
   Routes,
 } from '@angular/router';
-import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -53,28 +52,6 @@ const routes: Routes = [
       externalUrl:
         'https://discord.com/oauth2/authorize?client_id=741682757486510081&scope=bot%20applications.commands&permissions=2416035904',
     },
-  },
-  {
-    path: 'presets',
-    loadChildren: () =>
-      import('./modules/category-store/category-store.module').then(
-        (mod) => mod.CategoryStoreModule
-      ),
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./modules/dashboard/dashboard.module').then(
-        (mod) => mod.DashboardModule
-      ),
-  },
-  {
-    path: 'dashboard/:guildId',
-    canActivate: [AuthGuard],
-    loadChildren: () =>
-      import('./modules/dashboard/guild-details/guild-details.module').then(
-        (mod) => mod.GuildDetailsModule
-      ),
   },
   {
     path: '**',

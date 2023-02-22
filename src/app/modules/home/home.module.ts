@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CategoryCardModule } from 'src/app/shared/components/category-card/category-card.module';
+import { DiscordModule } from 'src/app/shared/components/discord/discord.module';
 import { HomeComponent } from './home.component';
 
 @NgModule({
@@ -9,8 +9,9 @@ import { HomeComponent } from './home.component';
   imports: [
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
     RouterModule,
-    CategoryCardModule,
     CommonModule,
+    DiscordModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeModule {}

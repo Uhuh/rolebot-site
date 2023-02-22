@@ -7,11 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { FooterModule } from './shared/components/footer/footer.module';
-import { COOKIES } from './shared/tokens/cookies.token';
-import Cookies from 'js-cookie';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LOCAL_STORAGE } from './shared/tokens/localStorage.token';
-import { AuthInceptor } from './shared/interceptors/http-interceptor';
+import { HttpClientModule } from '@angular/common/http';
 import {
   NgxGoogleAnalyticsModule,
   NgxGoogleAnalyticsRouterModule,
@@ -35,21 +31,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgxGoogleAnalyticsModule.forRoot('G-J9V0P4S4H7'),
     NgxGoogleAnalyticsRouterModule,
     FontAwesomeModule,
-  ],
-  providers: [
-    {
-      provide: COOKIES,
-      useValue: Cookies,
-    },
-    {
-      provide: LOCAL_STORAGE,
-      useValue: window.localStorage,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInceptor,
-      multi: true,
-    },
   ],
   bootstrap: [AppComponent],
 })
