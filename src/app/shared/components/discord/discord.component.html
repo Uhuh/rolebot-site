@@ -1,0 +1,61 @@
+<discord-messages>
+  <discord-message profile="rolebot">
+    <discord-embed slot="embeds" color="#ed4245" embed-title="Colors">
+      <discord-embed-description slot="description">
+        Pick your favorite color!
+        <div>
+          <div *ngFor="let rr of reactRoles; trackBy: trackByFn">
+            <ng-container *ngIf="!hideEmojis || isReaction">
+              <span>{{ rr.emoji }}</span> -
+            </ng-container>
+            <discord-mention type="role" [color]="rr.color">
+              {{ rr.name }}
+            </discord-mention>
+          </div>
+        </div>
+      </discord-embed-description>
+    </discord-embed>
+    <discord-reactions slot="reactions">
+      <ng-container *ngIf="isReaction">
+        <discord-reaction
+          *ngFor="let rr of reactRoles"
+          [name]="rr.emoji"
+          [count]="rr.count"
+        ></discord-reaction>
+      </ng-container>
+    </discord-reactions>
+    <discord-attachments slot="components">
+      <discord-action-row *ngIf="isButton">
+        <!-- Can't iterate over reactRoles array since emoji-name doesn't do data binding? -->
+        <discord-button
+          type="secondary"
+          [emoji]="hideEmojis ? '' : '.'"
+          emoji-name="🟥"
+        >
+          Red
+        </discord-button>
+        <discord-button
+          type="secondary"
+          [emoji]="hideEmojis ? '' : '.'"
+          emoji-name="🟩"
+        >
+          Green
+        </discord-button>
+        <discord-button
+          type="secondary"
+          [emoji]="hideEmojis ? '' : '.'"
+          emoji-name="🟦"
+        >
+          Blue
+        </discord-button>
+        <discord-button
+          type="secondary"
+          [emoji]="hideEmojis ? '' : '.'"
+          emoji-name="🟪"
+        >
+          Purple
+        </discord-button>
+      </discord-action-row>
+    </discord-attachments>
+  </discord-message>
+</discord-messages>
