@@ -6,7 +6,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
-import { ISlashCommand } from '../types/interfaces';
+import { ISlashCommand } from '../../types/interfaces';
 
 @Component({
   selector: 'app-accordion',

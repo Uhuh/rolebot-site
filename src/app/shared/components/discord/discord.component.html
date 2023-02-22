@@ -6,7 +6,7 @@
         <div>
           <div *ngFor="let rr of reactRoles; trackBy: trackByFn">
             <ng-container *ngIf="!hideEmojis || isReaction">
-              <span>{{ rr.emoji }}</span> -
+              <span>{{ rr.emojiIcon }}</span> -
             </ng-container>
             <discord-mention type="role" [color]="rr.color">
               {{ rr.name }}
@@ -19,6 +19,7 @@
       <ng-container *ngIf="isReaction">
         <discord-reaction
           *ngFor="let rr of reactRoles"
+          [emoji]="rr.emoji"
           [name]="rr.emoji"
           [count]="rr.count"
         ></discord-reaction>

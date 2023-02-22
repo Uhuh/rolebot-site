@@ -24,6 +24,7 @@
   padding: 20px;
   border-radius: 5px;
   background-color: var(--rolebot-green);
+  border: 2px solid var(--third-light);
 
   h1 {
     font-size: 26px;
@@ -38,11 +39,12 @@
     color: var(--white);
 
     &.active:hover, &:hover {
-      background-color: var(--grey-fade);
+      background-color: var(--secondary-color);
     }
 
     &.active {
-      background-color: var(--secondary-color);
+      outline: 2px solid var(--third-light);
+      background-color: var(--third-color);
     }
   }
 
@@ -83,11 +85,9 @@
   width: fit-content;
   scroll-margin-top: 8rem;
   margin: 0;
-  margin-bottom: 1rem;
-
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: var(--white);
-  border-bottom: 2px solid var(--rolebot-red);
+  border-bottom: 2px solid var(--secondary-light);
 
   @media (max-width: 600px) {
     scroll-margin-top: 5rem;
@@ -99,5 +99,3 @@
   flex-direction: column;
   gap: 10px;
 }
-
-

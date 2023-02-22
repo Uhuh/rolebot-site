@@ -1,0 +1,133 @@
+
+h2, p {
+  margin: 0;
+}
+
+.accordion-item {
+  user-select: none;
+  display: flex;
+  min-width: 250px;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--rolebot-green);
+  transition: all 0.3 ease-in-out;
+  border-radius: 4px;
+  padding: 10px;
+
+  border: 2px solid var(--third-light);
+  //border-left: 2px solid var(--rolebot-red);
+
+  code {
+    margin: 0;
+  }
+
+  @media (max-width: 650px) {
+    min-width: unset;
+    max-width: unset;
+  }
+
+  @media (max-width: 400px) {
+    min-width: unset;
+    max-width: unset;
+  }
+}
+
+.command-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.command-title {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  color: var(--white);
+  padding: 5px;
+
+  transition: all 0.3s;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--rolebot-green-fade);
+  }
+
+  &.closed::after {
+    font-size: 2rem;
+    margin-left: auto;
+    align-self: center;
+    content: "+";
+    color: var(--third-color);
+  }
+
+  &:not(.closed)::after {
+    font-size: 2rem;
+    margin-left: auto;
+    align-self: center;
+    content: "-";
+    color: var(--third-color);
+  }
+}
+
+.command-description {
+  & > p {
+    margin-bottom: 5px;
+  }
+  padding: 5px;
+  padding-top: 5px;
+  color: var(--off-white);
+  width: 100%;
+}
+
+.usage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  // padding-left: 10px;
+  // border-left: 2px solid var(--off-white);
+  .command {
+    margin: 8px 0;
+  }
+}
+
+hr {
+  color: var(--third-light);
+}
+
+.arg-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.command-arg {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--third-light);
+
+  background-color: #003040;
+  border-radius: 4px;
+
+  // border-left: 2px solid var(--grey);
+  padding: 10px;
+
+  gap: 5px;
+  p {
+    font-size: clamp(12px, 2vw, 18px) !important;
+  }
+
+  .required {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .tag {
+      width: fit-content;
+      border-radius: 4px;
+      color: var(--off-white);
+      padding: 2px 4px;
+      background-color: var(--blurple);
+    }
+  }
+}

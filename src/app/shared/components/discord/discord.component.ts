@@ -3,6 +3,7 @@ import { GuildReactType } from '../../types/interfaces';
 
 interface IFakeReactRole {
   emoji: string;
+  emojiIcon: string;
   color: string;
   name: string;
   count: number;
@@ -12,35 +13,38 @@ interface IFakeReactRole {
   selector: 'app-discord',
   templateUrl: './discord.component.html',
   styleUrls: ['./discord.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
 })
 export class DiscordComponent {
-  type = GuildReactType.reaction;
-  hideEmojis = false;
+  @Input() type = GuildReactType.reaction;
+  @Input() hideEmojis = false;
 
   emoji = '🟥';
 
   reactRoles: IFakeReactRole[] = [
     {
-      emoji: '🟥',
+      emoji: '../../../assets/emojis/red.png',
+      emojiIcon: '🟥',
       color: '#f8312f',
       name: 'Red',
       count: 27,
     },
     {
-      emoji: '🟩',
+      emoji: '../../../assets/emojis/green.png',
+      emojiIcon: '🟩',
       color: '#00d26a',
       name: 'Green',
       count: 9,
     },
     {
-      emoji: '🟦',
+      emoji: '../../../assets/emojis/blue.png',
+      emojiIcon: '🟦',
       color: '#0074ba',
       name: 'Blue',
       count: 19,
     },
     {
-      emoji: '🟪',
+      emoji: '../../../assets/emojis/purple.png',
+      emojiIcon: '🟪',
       color: '#8d65c5',
       name: 'Purple',
       count: 92,

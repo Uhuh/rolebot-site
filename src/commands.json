@@ -1,72 +1,188 @@
 {
   "react": [
     {
-      "title": "/react-channel",
+      "title": "/react channel",
       "description": "Send category embeds to a specific channel.",
-      "usage": "/react-channel #channel",
-      "detailedDescription": "Select a channel for RoleBot to send all configured Category's to and react to. This is the recommend way to use RoleBot."
+      "usage": "/react channel",
+      "args": [
+        {
+          "name": "channel",
+          "optional": false,
+          "description": "The channel to send the react roles to."
+        },
+        {
+          "name": "category",
+          "optional": true,
+          "description": "If you want to send a specific category use this."
+        }
+      ],
+      "detailedDescription": "Select a channel for RoleBot to send all configured Category's to and react to."
     },
     {
-      "title": "/react-role",
+      "title": "/react create",
       "description": "Create a single react role.",
-      "usage": "/react-role role emoji",
-      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+      "usage": "/react create",
+      "args": [
+        {
+          "name": "role",
+          "optional": false,
+          "description": "The role users will get."
+        },
+        {
+          "name": "emoji",
+          "optional": false,
+          "description": "The emoji users use."
+        },
+        {
+          "name": "description",
+          "optional": true,
+          "description": "Describe what the role's for!"
+        }
+      ],
+      "detailedDescription": "Create an association between one of your servers roles and an emoji."
     },
     {
-      "title": "/react-list",
+      "title": "/react edit",
+      "description": "Edit an existing react role.",
+      "usage": "/react edit",
+      "args": [
+        {
+          "name": "role",
+          "optional": false,
+          "description": "The role that relates to an existing react role."
+        },
+        {
+          "name": "new-emoji",
+          "optional": true,
+          "description": "New emoji if you want to update the emoji."
+        },
+        {
+          "name": "description",
+          "optional": true,
+          "description": "New description if you want to update it."
+        }
+      ],
+      "detailedDescription": "Edit an existing react roles emoji or description."
+    },
+    {
+      "title": "/react list",
       "description": "List all react roles.",
-      "usage": "/react-role role emoji",
-      "detailedDescription": "Create an association between one of your servers roles and a server emoji or default Discord emoji."
+      "usage": "/react list",
+      "detailedDescription": "List all react roles."
     },
     {
-      "title": "/react-message",
+      "title": "/react message",
       "description": "RoleBot will react to a single message for a single category.",
-      "usage": "/react-message message-link",
-      "detailedDescription": "Instead of using RoleBot's default Category embeds you can have RoleBot react to your messages instead! This is one Category per message."
+      "usage": "/react message",
+      "args": [
+        {
+          "name": "message-link",
+          "optional": false,
+          "description": "The Discord message you wish for RoleBot to react to."
+        },
+        {
+          "name": "category",
+          "optional": false,
+          "description": "The RoleBot category you wish to react with."
+        }
+      ],
+      "detailedDescription": "Instead of using RoleBot's default Category embeds you can have RoleBot react to your messages instead!"
     },
     {
-      "title": "/react-remove",
+      "title": "/react remove",
       "description": "Remove a single react role",
-      "usage": "/react-remove @role",
+      "usage": "/react remove",
+      "args": [
+        {
+          "name": "role",
+          "optional": false,
+          "description": "The role you wish to remove."
+        }
+      ],
       "detailedDescription": "Don't want a react role anymore? Remove it!"
+    },
+    {
+      "title": "/react nuke",
+      "description": "Remove ALL react roles for your server.",
+      "usage": "/react nuke",
+      "detailedDescription": "This is a VERY destructive command. You need to confirm twice that you want to delete all your react roles."
     }
   ],
   "category": [
     {
-      "title": "/category-add",
+      "title": "/category add",
       "description": "Add react roles to a category.",
-      "usage": "/category-add",
+      "usage": "/category add",
       "detailedDescription": "Select from a list of your servers categories to add react roles to via buttons. Super simple!"
     },
     {
-      "title": "/category-create",
+      "title": "/category create",
       "description": "Create a new Category",
-      "usage": "/category-create name description mutually-exclusive",
-      "detailedDescription": "Create a category to organize your react roles in. Make roles mutually exclusive, give it a description to help users understand what the roles are for!"
+      "usage": "/category create",
+      "args": [
+        {
+          "name": "name",
+          "optional": false,
+          "description": "The name of the category."
+        },
+        {
+          "name": "description",
+          "optional": true,
+          "description": "The description of the category. Use \n to add breaks/newlines between lines."
+        },
+        {
+          "name": "mutually-exclusive",
+          "optional": true,
+          "description": "Make roles from this category mutually exclusive. Default is false."
+        },
+        {
+          "name": "required-role",
+          "optional": true,
+          "description": "Require users to have a certain role to obtain roles from this category."
+        },
+        {
+          "name": "excluded-role",
+          "optional": true,
+          "description": "Users with this role cannot obtain roles from this category."
+        },
+        {
+          "name": "display-order",
+          "optional": true,
+          "description": "Change how the category displays the react roles."
+        }
+      ],
+      "detailedDescription": "Create a category to organize your react roles in."
     },
     {
-      "title": "/category-edit",
+      "title": "/category edit",
       "description": "Edit a category's information.",
-      "usage": "/category-edit name new-name new-description mutually-exclusive",
+      "usage": "/category edit name new-name new-description mutually-exclusive",
       "detailedDescription": "Made a mistake and want to fix it? Use the edit command!"
     },
     {
-      "title": "/category-list",
+      "title": "/category list",
       "description": "List all categoryies.",
-      "usage": "/category-list",
-      "detailedDescription": "Listing your categories shows if a category is mutually-exclusive and the react roles, description and title within it."
+      "usage": "/category list",
+      "detailedDescription": "List all your categories and their configurations."
     },
     {
-      "title": "/category-remove",
+      "title": "/category remove",
       "description": "Want to remove a category? Use this.",
-      "usage": "/category-remove name",
+      "usage": "/category remove",
       "detailedDescription": "This will delete the category and free all react roles inside of it."
     },
     {
-      "title": "/category-update",
+      "title": "/category update",
       "description": "Update a category embed.",
-      "usage": "/category-update message-link",
-      "detailedDescription": "This command updates an embed sent by the /react-channel command."
+      "usage": "/category update",
+      "args": [
+        {
+          "name": "message-link",
+          "optional": false,
+          "description": "Copy the link of the RoleBot message you want RoleBot to update."
+        }
+      ],
+      "detailedDescription": "This command updates an embed sent by the /react channel command."
     }
   ],
   "general": [
@@ -78,15 +194,69 @@
     },
     {
       "title": "/auto-join",
-      "description": "This command isn't done yet!",
+      "description": "Setup auto join roles for the server.",
       "usage": "/auto-join",
-      "detailedDescription": "Auto join roles are in the works, thanks for understanding!"
+      "subcommands": [
+        {
+          "title": "add",
+          "description": "Add a role for users to get when joining",
+          "usage": "/auto-join add",
+          "args": [
+            {
+              "name": "role",
+              "optional": false,
+              "description": "Users will get this role when joining."
+            }
+          ]
+        },
+        {
+          "title": "list",
+          "description": "See all your auto join roles.",
+          "usage": "/auto-join list"
+        },
+        {
+          "title": "remove",
+          "description": "Remove an auto join role from the list.",
+          "usage": "/auto-join remove",
+          "args": [
+            {
+              "name": "role",
+              "optional": false,
+              "description": "The role to remove."
+            }
+          ]
+        }
+      ],
+      "detailedDescription": "Auto join roles are roles that are given to a user when they join the server."
     },
     {
       "title": "/tutorial",
       "description": "Need to learn the ropes?",
       "usage": "/tutorial",
       "detailedDescription": "This command helps walk you through how to create a basic category and use it for react roles."
+    },
+    {
+      "title": "/config",
+      "description": "Configure how RoleBot displays your react roles.",
+      "usage": "/config category",
+      "args": [
+        {
+          "name": "react-type",
+          "optional": true,
+          "description": "Can be set to Reaction or button, this is how RoleBot displays its embed."
+        },
+        {
+          "name": "hide-emojis",
+          "optional": true,
+          "description": "If using button react-type, you can hide the emojis for the buttons."
+        },
+        {
+          "name": "hide-embed",
+          "optional": true,
+          "description": "Change if RoleBot uses an embed or just a normal message."
+        }
+      ],
+      "detailedDescription": "Use buttons, hide emojis for buttons or even hide the embed RoleBot makes and use a plain message instead."
     }
   ]
 }

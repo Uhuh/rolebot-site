@@ -1,0 +1,31 @@
+<div *ngIf="slashCommand" class="accordion-item" (click)="toggleOpenClosed()">
+  <div class="command-title">
+    <div [ngClass]="{ 'command-header': true, closed: active }">
+      <strong>{{ slashCommand.title }}</strong>
+      <span>{{ slashCommand.description }}</span>
+    </div>
+  </div>
+  <div [@openClose]="openClosedState" class="command-description">
+    <hr />
+    <span>
+      {{ slashCommand.detailedDescription }}
+    </span>
+    <div class="usage">
+      <div class="command">
+        <span>Usage: </span>
+        <code>{{ slashCommand.usage }}</code>
+      </div>
+      <div class="arg-wrapper" *ngIf="slashCommand.args">
+        <div class="command-arg" *ngFor="let arg of slashCommand.args">
+          <div class="required">
+            <code>{{ arg.name }}</code>
+            <div class="tag" *ngIf="!arg.optional">required</div>
+          </div>
+          <span>{{ arg.description }}</span>
+        </div>
+      </div>
+      <ng-content *ngFor="let subcommand of slashCommand.subcommands">
+      </ng-content>
+    </div>
+  </div>
+</div>

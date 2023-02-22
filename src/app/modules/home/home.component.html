@@ -57,8 +57,25 @@
             <code>/react channel</code> to send the embeds to any channel you
             desire.
           </p>
+          <div>
+            <p>Using <code>/config</code> you can change the react type.</p>
+            <mat-radio-group
+              aria-label="Select reaction type"
+              (change)="onChange($event)"
+            >
+              <mat-radio-button value="0">Reaction</mat-radio-button>
+              <mat-radio-button value="1">Button</mat-radio-button>
+            </mat-radio-group>
+            <p>And you can hide emojis if you use buttons!</p>
+            <mat-checkbox (change)="onEmojiChange($event)">
+              Hide emojis?
+            </mat-checkbox>
+          </div>
         </div>
-        <app-discord></app-discord>
+        <app-discord
+          [type]="selectedType"
+          [hideEmojis]="hideEmojis"
+        ></app-discord>
       </div>
       <div class="description grid">
         <div class="descriptor">
@@ -78,7 +95,7 @@
             <discord-reactions slot="reactions">
               <discord-reaction
                 name="👀"
-                emoji="../assets/eyes.svg"
+                emoji="../assets/emojis/eyes.svg"
                 count="2"
                 reacted
               ></discord-reaction>
