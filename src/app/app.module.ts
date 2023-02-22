@@ -13,6 +13,7 @@ import {
   NgxGoogleAnalyticsRouterModule,
 } from 'ngx-google-analytics';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgxGoogleAnalyticsModule.forRoot('G-J9V0P4S4H7'),
     NgxGoogleAnalyticsRouterModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
 })
