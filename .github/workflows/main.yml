@@ -14,7 +14,7 @@ jobs:
       run: yarn
 
     - name: Build
-      run: yarn build -- --prod
+      run: yarn build
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
