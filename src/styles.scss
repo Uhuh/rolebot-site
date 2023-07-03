@@ -1,41 +1,18 @@
-@use "@angular/material" as mat;
-
-@include mat.core();
-
-$my-app-primary: mat.define-palette(mat.$teal-palette);
-$my-app-accent: mat.define-palette(mat.$grey-palette, A200, A100, A400);
-$my-app-warn: mat.define-palette(mat.$red-palette);
-
-$my-app-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $my-app-primary,
-      accent: $my-app-accent,
-      warn: $my-app-warn,
-    ),
-  )
-);
-
-@include mat.all-component-themes($my-app-theme);
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 
 /* You can add global styles to this file, and also import other style files */
 :root {
   --rolebot-green-fade: #0a273330;
   --secondary-color: #073b4c;
 
-  --secondary-dark: #00161D;
-  --secondary-light: #2D6577;
+  --secondary-dark: #00161d;
+  --secondary-light: #2d6577;
   --third-color: #003040;
-  --third-light: #00475E;
+  --third-light: #00475e;
 
-  --rolebot-red: #FD2946;
+  --rolebot-red: #fd2946;
   --rolebot-green: #0a2733;
 
-  // For custom embeds
-  --discord-theme: #36393f;
-  --discord-embed-theme: #2f3136;
   --blurple: #5865f2;
 
   --grey: #808080;
@@ -43,15 +20,15 @@ $my-app-theme: mat.define-dark-theme(
 
   --grey-text-fade: #969292e3;
 
-  --white: #F0EDE4;
-  --off-white: #D3D3D3;
+  --white: #f0ede4;
+  --off-white: #d3d3d3;
 
   --bot-avatar: url("./assets/logo.jpg");
   --banner-default: url("./assets/banners/banner-logoless.svg");
   --banner-white: url("./assets/banners/banner.png");
   --logoless-banner-dark: url("./assets/banners/dark-banner-logoless.svg");
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .rolebot-red {
@@ -62,21 +39,13 @@ $my-app-theme: mat.define-dark-theme(
   box-sizing: border-box;
 }
 
-h1 {
-  font-size: clamp(30px, 5vw, 36px);
-}
-
-p {
-  font-size: clamp(14px, 3vw, 18px);
-}
-
-
 html {
   scroll-behavior: smooth;
   height: 100%;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   display: flex;
@@ -96,7 +65,6 @@ code {
 }
 
 a {
-  font-weight: 400;
   text-decoration: none;
   color: var(--off-white);
   transition: all ease 0.2s;
@@ -116,113 +84,19 @@ a {
   width: 128px;
 }
 
-.text-group-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: auto;
-  max-width: 800px;
-  margin: auto;
-
-  @media (min-width: 300px) and (max-width: 1200px) {
-    gap: 30px;
-  }
-}
-
-.text-group {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  p {
-    margin: 0;
-    color: var(--off-white);
-  }
-
-  &::before {
-    content: ">";
-    display: inline-block;
-    margin-left: -1rem;
-    margin-bottom: -2.75rem;
-  }
-
-  @media (min-width: 300px) and (max-width: 1200px) {
-    &::before {
-      content: "";
-    }
-  }
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.grey {
-  color: var(--grey);
-  p {
-    margin: 10px 0;
-  }
-}
-
-.off-white {
-  color: var(--off-white);
-  p {
-    margin: 10px 0;
-  }
-}
-
-.slideInLeft {
-  animation: slideLeft 0.7s;
-}
-.slideInRight {
-  animation: slideRight 0.7s;
-}
-.slideInDown {
-  animation: slideDown 0.7s;
-}
-.slideInUp {
-  animation: slideUp 0.7s;
-}
-
-.flex {
-  display: flex;
-}
-
 @keyframes popIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-  from {transform: translateY(20px);}
-  to {transform: translateY(0px);}
-}
-
-@keyframes spin {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
-}
-
-@keyframes slideUp {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-  from {transform: translateY(20px);}
-  to {transform: translateY(0px);}
-}
-@keyframes slideLeft {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-  from {transform: translateX(20px);}
-  to {transform: translateX(0px);}
-}
-@keyframes slideRight {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-  from {transform: translateX(0px);}
-  to {transform: translateX(20px);}
-}
-@keyframes slideDown {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-  from {transform: translateY(0px);}
-  to {transform: translateY(20px);}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 .discord-action-row {
