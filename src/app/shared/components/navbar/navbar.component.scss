@@ -1,136 +1,59 @@
 :host {
-  z-index: 10;
-  margin: 0 auto;
+  display: flex;
+  height: 100%;
   width: 100%;
 
-  top: 0;
-  position: sticky;
+  .container {
+    display: flex;
+    height: 100%;
+  }
 
-  a {
-    color: var(--white);
-    font-size: clamp(18px, 1.1vw, 22px);
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: scale 0.3s;
+  }
+
+  .app-logo {
+    margin: 0;
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .openedMobile {
+    scale: 1.05;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
   }
 }
 
-.navbar-logo {
-  height: 64px;
-  width: 64px;
+mat-toolbar {
+  background-color: var(--sidebar) !important;
 }
 
-.navbar-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--rolebot-green);
-
-  padding: 10px;
+mat-sidenav {
+  background-color: var(--sidebar);
 }
 
-.ml-auto {
-  margin-left: auto;
+mat-sidenav-content,
+mat-sidenav-container {
+  background-color: var(--secondary-dark);
 }
 
-.plr-5 {
-  padding: 0 5px;
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  margin-left: 10rem;
-  gap: 20px;
-
-  a {
-    padding: 7px 15px;
-    border-radius: 5px;
-
-    &.invite-btn {
-      background-color: var(--white);
-      color: var(--rolebot-green);
-      &:hover {
-        color: var(--white);
-        background-color: var(--secondary-color);
-      }
-    }
-
-    &:hover {
-      background-color: var(--grey-fade);
-    }
-  }
-
-  @media (max-width: 950px) {
-    display: none;
-  }
-}
-
-.sidenav-shade {
-  z-index: 12;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  &.opened {
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-/* Codepen hamburger CSS */
-/* Icon 1 */
-#nav-icon {
-  margin-top: -8px;
-  margin-right: 1rem;
-  width: 25px;
-  height: 15px;
-  position: relative;
-  transform: rotate(0deg);
-  transition: .5s ease-in-out;
-  cursor: pointer;
-
-  @media (min-width: 950px) {
-    display: none;
-    cursor: none;
-  }
-}
-
-#nav-icon span {
-  display: block;
-  position: absolute;
-  height: 3px;
+mat-sidenav-container {
   width: 100%;
-  background: var(--white);
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: .25s ease-in-out;
 }
 
-#nav-icon span:nth-child(1) {
-  top: 0px;
+mat-sidenav-content {
+  width: 100%;
 }
 
-#nav-icon span:nth-child(2) {
-  top: 10px;
-}
-
-#nav-icon span:nth-child(3) {
-  top: 20px;
-}
-
-#nav-icon.open span:nth-child(1) {
-  top: 10px;
-  transform: rotate(135deg);
-}
-
-#nav-icon.open span:nth-child(2) {
-  opacity: 0;
-  left: -60px;
-}
-
-#nav-icon.open span:nth-child(3) {
-  top: 10px;
-  transform: rotate(-135deg);
+mat-sidenav {
+  border-right: 0px;
 }

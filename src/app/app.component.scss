@@ -1,39 +1,16 @@
 :host {
   display: flex;
-  flex-direction: column;
+  width: 100%;
   height: 100%;
 }
 
-.new-bot {
-  z-index: 10;
-  margin: 10px auto;
-  padding: 10px;
-  font-weight: 600;
-  top: 99px;
-  position: sticky;
-  width: min-content;
-  white-space: nowrap;
-
-  a {
-    text-decoration: underline;
-  }
-
-  border: 2px solid red;
-  border-radius: 10px;
-
+.container {
   display: flex;
-  gap: 10px;
-  text-align: center;
-  justify-content: center;
-  background-color: var(--rolebot-green);
-  color: #fff;
+  flex-direction: column;
+  flex: 1;
 
-  @media(max-width: 800px) {
-    flex-wrap: wrap;
-    & > div {
-      display: flex;
-      flex-wrap: wrap;
-    }
+  @media (max-width: 900px) {
+    margin: 2rem;
   }
 }
 
@@ -41,7 +18,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  background-image: var(--logoless-banner-dark);
+  //background-image: var(--logoless-banner-dark);
   background-size: cover;
   z-index: -1;
 }

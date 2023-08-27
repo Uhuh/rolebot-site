@@ -1,3 +1,24 @@
+@use "@angular/material" as mat;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+@include mat.core();
+
+$my-app-primary: mat.define-palette(mat.$teal-palette);
+$my-app-accent: mat.define-palette(mat.$grey-palette, A200, A100, A400);
+$my-app-warn: mat.define-palette(mat.$red-palette);
+
+$my-app-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $my-app-primary,
+      accent: $my-app-accent,
+      warn: $my-app-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($my-app-theme);
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 
 /* You can add global styles to this file, and also import other style files */
@@ -23,6 +44,10 @@
   --white: #f0ede4;
   --off-white: #d3d3d3;
 
+  --text: rgba(255, 255, 255, 1);
+  --text-inactive: rgba(255, 255, 255, 0.6);
+  --header: rgba(255, 255, 255, 0.8);
+
   --bot-avatar: url("./assets/logo.jpg");
   --banner-default: url("./assets/banners/banner-logoless.svg");
   --banner-white: url("./assets/banners/banner.png");
@@ -42,6 +67,10 @@
 html {
   scroll-behavior: smooth;
   height: 100%;
+}
+
+body {
+  overflow: auto;
 }
 
 body,

@@ -1,23 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component } from '@angular/core';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [NavbarComponent, RouterOutlet, FooterComponent],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
   onActivate() {
     window.scroll(0, 0);
-  }
-
-  destroy$ = new Subject<void>();
-
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
   }
 }

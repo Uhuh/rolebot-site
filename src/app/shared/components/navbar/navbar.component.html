@@ -1,40 +1,17 @@
-<nav>
-  <div class="navbar-container">
-    <div>
-      <a routerLink="">
-        <img
-          class="navbar-logo"
-          src="assets/logos/rolebot-logo-white.png"
-          alt="rolebot logo white"
-        />
-      </a>
-    </div>
-    <div
-      [className]="openSideNav ? 'ml-auto open' : 'ml-auto'"
-      id="nav-icon"
-      (click)="toggleSideNav()"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="links">
-      <a routerLink="about"> About </a>
-      <a routerLink="commands"> Commands </a>
-      <a routerLink="faqs"> FAQ </a>
-      <a href="https://discord.gg/9BYN266sC4" target="_blank"> Server </a>
-      <a
-        class="plr-5 invite-btn"
-        href="https://discord.com/oauth2/authorize?client_id=741682757486510081&scope=bot%20applications.commands&permissions=2416035904&response_type=code&redirect_uri=https://rolebot.gg/"
-        target="_blank"
-      >
-        Invite
-      </a>
-    </div>
-    <div
-      [className]="openSideNav ? 'opened sidenav-shade' : ''"
-      (click)="toggleSideNav()"
-    ></div>
-    <app-sidenav [@sidenav]="sideNavState"></app-sidenav>
-  </div>
-</nav>
+<mat-toolbar class="toolbar" *ngIf="isMobile">
+  <button mat-icon-button (click)="nav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img class="app-logo" src="assets/logos/rolebot-logo-white.png" />
+</mat-toolbar>
+<mat-sidenav-container class="container">
+  <mat-sidenav #nav [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile">
+    <app-sidenav [isMobile]="isMobile" [nav]="nav"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content
+    class="content"
+    [ngClass]="{ openedMobile: isMobile && nav.opened }"
+  >
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

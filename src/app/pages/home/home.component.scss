@@ -27,7 +27,14 @@
   padding: 3rem 0;
   padding-top: 4rem;
 
-  background: repeating-linear-gradient(45deg, var(--rolebot-green) 0, var(--rolebot-green) 5%, var(--secondary-color) 0, var(--secondary-color) 50%) 0 / 15px 15px;
+  background: repeating-linear-gradient(
+      45deg,
+      var(--rolebot-green) 0,
+      var(--rolebot-green) 5%,
+      var(--secondary-color) 0,
+      var(--secondary-color) 50%
+    )
+    0 / 15px 15px;
   background-color: var(--secondary-color);
 
   line-height: 1.6rem;
@@ -54,11 +61,11 @@
 .description-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 120px;
-  margin: 0 20vw;
-  padding: 1.5rem;
-  border-radius: 5px;
-  background-color: rgba(0,0,0,0.5);
+  gap: 6rem;
+  margin: 0 6rem;
+  padding: 30px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid var(--white);
 
   @media (max-width: 950px) {
@@ -152,7 +159,8 @@
   }
 }
 
-.banner-text, .text-group {
+.banner-text,
+.text-group {
   h1 {
     font-weight: 400;
     margin: 0;

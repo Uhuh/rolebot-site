@@ -1,0 +1,95 @@
+<div class="wrapper">
+  <a [routerLink]="['']" (click)="close()">
+    <img
+      class="icon"
+      src="assets/logos/rolebot-logo-with-name-white.svg"
+      alt="rolebot logo white"
+    />
+  </a>
+  <div class="nav-groups">
+    <div class="nav-group">
+      <span class="nav-header">RoleBot Resources</span>
+      <a
+        routerLink=""
+        class="nav-link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>Home</span>
+      </a>
+      <a
+        routerLink="about"
+        class="nav-link"
+        routerLinkActive="active"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>About</span>
+      </a>
+      <a
+        routerLink="commands"
+        class="nav-link"
+        routerLinkActive="active"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>Commands</span>
+      </a>
+      <a
+        routerLink="faqs"
+        class="nav-link"
+        routerLinkActive="active"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>FAQ</span>
+      </a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-header">External Links</span>
+      <a
+        href="https://discord.gg/9BYN266sC4"
+        target="_blank"
+        class="nav-link"
+        routerLinkActive="active"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>Support Server</span>
+      </a>
+      <a
+        class="nav-link"
+        href="https://discord.com/oauth2/authorize?client_id=741682757486510081&scope=bot%20applications.commands&permissions=2416035904&response_type=code&redirect_uri=https://rolebot.gg/"
+        target="_blank"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>Bot Invite</span>
+      </a>
+      <a
+        class="nav-link"
+        href="https://ko-fi.com/panku"
+        target="_blank"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>Support Me</span>
+      </a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-header">Check these out</span>
+      <a
+        href="https://discord.gg/9BYN266sC4"
+        target="_blank"
+        class="nav-link"
+        routerLinkActive="active"
+        (click)="close()"
+      >
+        <img src="assets/logos/rolebot-logo-white.png" />
+        <span>Miki by Veld</span>
+      </a>
+    </div>
+  </div>
+</div>

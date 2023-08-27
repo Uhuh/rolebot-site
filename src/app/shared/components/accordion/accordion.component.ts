@@ -7,33 +7,34 @@ import {
 } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { ISlashCommand } from '../../types/interfaces';
+import { NgIf, NgClass, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-accordion',
-  templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss'],
-  animations: [
-    trigger('openClose', [
-      state(
-        'open',
-        style({
-          maxHeight: '1000px',
-          opacity: '1',
-        })
-      ),
-      state(
-        'closed',
-        style({
-          maxHeight: '0px',
-          opacity: '0',
-          overflow: 'hidden',
-          padding: 0,
-        })
-      ),
-      transition('open => closed', animate('200ms ease')),
-      transition('closed => open', animate('300ms ease')),
-    ]),
-  ],
+    selector: 'app-accordion',
+    templateUrl: './accordion.component.html',
+    styleUrls: ['./accordion.component.scss'],
+    animations: [
+        trigger('openClose', [
+            state('open', style({
+                maxHeight: '1000px',
+                opacity: '1',
+            })),
+            state('closed', style({
+                maxHeight: '0px',
+                opacity: '0',
+                overflow: 'hidden',
+                padding: 0,
+            })),
+            transition('open => closed', animate('200ms ease')),
+            transition('closed => open', animate('300ms ease')),
+        ]),
+    ],
+    standalone: true,
+    imports: [
+        NgIf,
+        NgClass,
+        NgFor,
+    ],
 })
 export class AccordionComponent implements OnInit {
   @Input() slashCommand?: ISlashCommand;

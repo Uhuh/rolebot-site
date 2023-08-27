@@ -1,5 +1,6 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 import { GuildReactType } from '../../types/interfaces';
+import { NgFor, NgIf } from '@angular/common';
 
 interface IFakeReactRole {
   emoji: string;
@@ -13,6 +14,9 @@ interface IFakeReactRole {
   selector: 'app-discord',
   templateUrl: './discord.component.html',
   styleUrls: ['./discord.component.scss'],
+  standalone: true,
+  imports: [NgFor, NgIf],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DiscordComponent {
   @Input() type = GuildReactType.reaction;

@@ -1,50 +1,44 @@
-import { NgModule } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  RouterModule,
-  RouterStateSnapshot,
-  Routes,
-} from '@angular/router';
+import { Routes } from '@angular/router';
 
-const routes: Routes = [
+export const APP_ROUTES: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./modules/home/home.module').then((mod) => mod.HomeModule),
+    loadComponent: () =>
+      import('./pages/home/home.component').then((c) => c.HomeComponent),
   },
   {
     path: 'about',
-    loadChildren: () =>
-      import('./modules/about/about.module').then((mod) => mod.AboutModule),
+    loadComponent: () =>
+      import('./pages/about/about.component').then((c) => c.AboutComponent),
   },
   {
     path: 'commands',
-    loadChildren: () =>
-      import('./modules/commands/commands.module').then(
-        (mod) => mod.CommandsModule
+    loadComponent: () =>
+      import('./pages/commands/commands.component').then(
+        (c) => c.CommandsComponent
       ),
   },
   {
     path: 'faqs',
-    loadChildren: () =>
-      import('./modules/faq/faq.module').then((mod) => mod.FaqModule),
+    loadComponent: () =>
+      import('./pages/faq/faq.component').then((c) => c.FaqComponent),
   },
   {
     path: 'privacy-policy',
-    loadChildren: () =>
-      import('./modules/privacy-policy/privacy-policy.module').then(
-        (mod) => mod.PrivacyPolicyModule
+    loadComponent: () =>
+      import('./pages/privacy-policy/privacy-policy.component').then(
+        (c) => c.PrivacyPolicyComponent
       ),
   },
   {
     path: 'terms',
-    loadChildren: () =>
-      import('./modules/terms/terms.module').then((mod) => mod.TermsModule),
+    loadComponent: () =>
+      import('./pages/terms/terms.component').then((c) => c.TermsComponent),
   },
   {
     path: 'invite',
-    loadChildren: () =>
-      import('./modules/home/home.module').then((mod) => mod.HomeModule),
+    loadComponent: () =>
+      import('./pages/home/home.component').then((c) => c.HomeComponent),
     resolve: {
       url: 'externalRedirect',
     },
@@ -58,17 +52,3 @@ const routes: Routes = [
     redirectTo: '',
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [
-    {
-      provide: 'externalRedirect',
-      useValue: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
-        window.location.href = (route.data as any).externalUrl;
-      },
-    },
-  ],
-})
-export class AppRoutingModule {}
