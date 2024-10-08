@@ -1,129 +1,51 @@
 :host {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   flex: 1;
-}
+  padding: 3rem 10rem;
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.banner {
-  animation: popIn 0.7s;
-  width: clamp(350px, 40vw, 1200px);
-  margin: 5vh auto;
-}
-
-.bot-info-container {
-  animation: popIn 0.7s;
-  display: flex;
-  align-items: center;
-}
-
-.description-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 3rem 0;
-  padding-top: 4rem;
-
-  background: repeating-linear-gradient(45deg, var(--rolebot-green) 0, var(--rolebot-green) 5%, var(--secondary-color) 0, var(--secondary-color) 50%) 0 / 15px 15px;
-  background-color: var(--secondary-color);
-
-  line-height: 1.6rem;
-  @media (min-width: 300px) and (max-width: 1200px) {
-    padding: 2rem 10px;
-    gap: 40px;
+  @media (max-width: 600px) {
+    padding: 3rem 1rem;
   }
 }
 
-.description {
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  img {
-    border-radius: 5px;
-    width: 100%;
-  }
-  @media (min-width: 300px) and (max-width: 1200px) {
-    padding: 20px;
-    margin: 0;
-  }
-}
-
-.description-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
-  margin: 0 20vw;
-  padding: 1.5rem;
-  border-radius: 5px;
-  background-color: rgba(0,0,0,0.5);
-  border: 2px solid var(--white);
-
-  @media (max-width: 950px) {
-    margin: 0;
-    padding: 0;
-    gap: 40px;
-  }
-}
-
-.grid {
+.rolebot-stats {
   display: grid;
-  justify-content: center;
-  gap: 50px;
-  grid-template-columns: repeat(2, 1fr);
-  order: 0;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
 
-  @media (min-width: 300px) and (max-width: 1000px) {
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
-    grid-column-gap: 10px;
-    grid-template-columns: none;
-  }
+    padding: 20px 40px;
 
-  @media (max-width: 650px) {
-    gap: 10px;
-    grid-column-gap: 25px;
-  }
-}
+    border-radius: 10px;
+    background-color: var(--off-white);
+    color: var(--third-color);
+    font-weight: 500;
 
-.category-card {
-  margin-top: 1rem;
-}
-
-.col-left {
-  order: -1;
-  @media (min-width: 300px) and (max-width: 1000px) {
-    order: 0;
-  }
-}
-
-.descriptor {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  h1 {
-    margin: 0;
-    color: var(--rolebot-red);
-    font-weight: 400;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  @media (max-width: 650px) {
-    p {
-      font-size: 1rem !important;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
   }
 }
 
 .banner-text {
   padding: 2rem 0;
-  margin-top: 60px;
-  background-color: var(--rolebot-green);
+  margin: 6rem 0;
+
+  @media (max-width: 600px) {
+    margin: 2rem 0;
+  }
 
   p {
     color: var(--grey-text-fade);
@@ -137,33 +59,96 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  @media (min-width: 300px) and (max-width: 1200px) {
-    padding: 20px;
-    margin-top: 0;
-
-    h1 {
-      font-size: 1.3rem;
-    }
-
-    p {
-      font-size: 1rem !important;
-    }
-  }
 }
 
-.banner-text, .text-group {
-  h1 {
-    font-weight: 400;
-    margin: 0;
-  }
+.banner-text {
   p {
     margin: 0;
     color: var(--off-white);
   }
 }
 
-mat-radio-group {
+
+.bot-info-container {
+  animation: popIn 0.7s;
+  width: clamp(350px, 40vw, 1200px);
   display: flex;
-  gap: 10px;
+  align-self: center;
+}
+
+.description-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  @media (max-width: 600px) {
+    gap: 5rem;
+  }
+
+  padding: 4rem 0;
+
+  .row-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 50px;
+
+    img {
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      * {
+        margin: 0;
+      }
+
+      p {
+        font-size: 22px;
+      }
+
+      h1 {
+        color: var(--rolebot-red);
+        font-weight: 700;
+      }
+    }
+
+    & .flip {
+      order: -1;
+    }
+
+    @media (max-width: 600px) {
+      .flip {
+        order: unset;
+      }
+
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.invite-today {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8rem;
+  align-items: center;
+  background-image: url("../../../assets/banners/banner-logoless.svg");
+  background-size: cover;
+  border-radius: 25px;
+
+  @media (max-width: 600px) {
+    padding: 3rem
+  }
+}
+
+.invite-button {
+  border-radius: 10px;
+  background-color: var(--rolebot-red);
+  color: white;
+  font-weight: 700;
+  padding: 12px 26px;
 }

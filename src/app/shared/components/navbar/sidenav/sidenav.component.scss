@@ -14,7 +14,7 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  background-color: var(--rolebot-green);
+  background-color: rgba(var(--rolebot-green), 1);
   justify-content: space-between;
   height: 100%;
 }

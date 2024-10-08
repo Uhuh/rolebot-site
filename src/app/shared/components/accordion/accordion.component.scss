@@ -9,7 +9,7 @@ h2, p {
   min-width: 250px;
   flex-direction: column;
   width: 100%;
-  background-color: var(--rolebot-green);
+  background-color: rgba(var(--rolebot-green), 1);
   transition: all 0.3 ease-in-out;
   border-radius: 4px;
   padding: 10px;
