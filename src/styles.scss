@@ -11,7 +11,7 @@
   --third-light: #00475e;
 
   --rolebot-red: #fd2946;
-  --rolebot-green: #0a2733;
+  --rolebot-green: 0, 24, 32;
 
   --blurple: #5865f2;
 
@@ -52,7 +52,7 @@ html {
   flex-direction: column;
   width: 100%;
   flex: 1;
-  background-color: rgba(#073b4c, 0.7);
+  background-color: rgba(var(--rolebot-green), 1);
 
   color: var(--white);
 }

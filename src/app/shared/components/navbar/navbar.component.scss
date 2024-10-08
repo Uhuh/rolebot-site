@@ -21,10 +21,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  background-color: var(--rolebot-green);
+  background-color: rgba(var(--rolebot-green), 0.8);
 
-  padding: 10px;
+  padding: 10px 10rem;
+
+  @media (max-width: 600px) {
+    padding: 10px 1rem;
+  }
+
+  justify-content: space-between;
 }
 
 .ml-auto {
@@ -47,7 +52,7 @@
 
     &.invite-btn {
       background-color: var(--white);
-      color: var(--rolebot-green);
+      color: rgba(var(--rolebot-green), 1);
       &:hover {
         color: var(--white);
         background-color: var(--secondary-color);
@@ -109,7 +114,7 @@
 }
 
 #nav-icon span:nth-child(1) {
-  top: 0px;
+  top: 0;
 }
 
 #nav-icon span:nth-child(2) {

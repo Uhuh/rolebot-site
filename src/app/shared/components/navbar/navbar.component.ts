@@ -8,6 +8,7 @@ import {
 import { Component, OnInit } from '@angular/core';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterLink } from '@angular/router';
+import { INVITE_URL } from '../../../../main';
 
 @Component({
   selector: 'app-navbar',
@@ -28,7 +29,7 @@ import { RouterLink } from '@angular/router';
         }),
       ),
       transition('out => in', animate('500ms ease')),
-      transition('in => out', animate('200ms ease')),
+      transition('in => out', animate('500ms ease')),
     ]),
   ],
   standalone: true,
@@ -38,6 +39,8 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class NavbarComponent {
+  protected readonly INVITE_URL = INVITE_URL;
+
   sideNavState = 'out';
 
   openSideNav = false;

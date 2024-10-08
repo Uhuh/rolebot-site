@@ -1,108 +1,44 @@
-<div class="home-container">
-  <div class="bot-info-container">
-    <img
-      class="banner"
-      src="./assets/logos/rolebot-logo-with-name-white.svg"
-      alt="rolebot logo banner"
-    />
-  </div>
-  <div class="banner-text">
-    <h1>
-      Let Role<span class="rolebot-red">Bot</span> do the hard work for you.
-    </h1>
-    <p>
-      Create react roles that Role<span class="rolebot-red">Bot</span> will
-      manage for you.
-    </p>
-  </div>
-  <div class="description-container">
-    <div class="description-wrapper">
-      <div class="description grid">
-        <div class="descriptor">
-          <h1>Categories</h1>
-          <p>
-            Keep your react roles organized by creating a category! Categories
-            help keep track of where react roles are and how you want users to
-            obtain roles from them. Want only one role to be obtained from a
-            category? Make them mutually-exclusive!
-          </p>
-        </div>
-        <img
-          src="./assets/examples/category.png"
-          alt="react role categories example"
-        />
-      </div>
-      <div class="description grid">
-        <div class="descriptor">
-          <h1>React Roles</h1>
-          <p>
-            It's easy to create react roles. Make fancy react roles with your
-            servers custom emojis, or use the default Discord ones!
-          </p>
-        </div>
-        <img
-          class="col-left"
-          src="./assets/examples/react-role.png"
-          alt="react role example"
-        />
-      </div>
-      <div class="description grid">
-        <div class="descriptor">
-          <h1>Reactions</h1>
-          <p>
-            It's always recommended to use
-            <span>Role<span class="rolebot-red">Bot</span>'s</span>
-            default embeds when using react roles. It puts all your categories
-            and their react roles in a single place! Use
-            <code>/react channel</code> to send the embeds to any channel you
-            desire.
-          </p>
-          <div>
-            <p>Using <code>/config</code> you can change the react type.</p>
-            <mat-radio-group
-              aria-label="Select reaction type"
-              (change)="onChange($event)"
-            >
-              <mat-radio-button value="0">Reaction</mat-radio-button>
-              <mat-radio-button value="1">Button</mat-radio-button>
-            </mat-radio-group>
-            <p>And you can hide emojis if you use buttons!</p>
-            <mat-checkbox (change)="onEmojiChange($event)">
-              Hide emojis?
-            </mat-checkbox>
-          </div>
-        </div>
-        <app-discord
-          [type]="selectedType"
-          [hideEmojis]="hideEmojis"
-        ></app-discord>
-      </div>
-      <div class="description grid">
-        <div class="descriptor">
-          <h1>Custom messages</h1>
-          <p>
-            Use <code>/react message</code>
-            when you want RoleBot to react to with a specific category to a
-            custom message!
-          </p>
-        </div>
-        <discord-messages class="col-left">
-          <discord-message profile="panku">
-            Wanna be annoyed with pings? React to get
-            <discord-mention type="role" color="#70f0b4">
-              Announcements
-            </discord-mention>
-            <discord-reactions slot="reactions">
-              <discord-reaction
-                name="👀"
-                emoji="../assets/emojis/eyes.svg"
-                count="2"
-                reacted
-              ></discord-reaction>
-            </discord-reactions>
-          </discord-message>
-        </discord-messages>
+<img
+  class="bot-info-container"
+  src="./assets/logos/rolebot-logo-with-name-white.svg"
+  alt="rolebot logo banner"
+/>
+
+<div class="rolebot-stats">
+  @for (stat of stats; track stat.title) {
+    <div>
+      <span>{{ stat.title }}</span>
+      <div>
+        <mat-icon>{{ stat.icon }}</mat-icon>
+        {{ stat.message }}
       </div>
     </div>
-  </div>
+  }
+</div>
+
+<div class="banner-text">
+  <h1>
+    Let Role<span class="rolebot-red">Bot</span> do the hard work for you.
+  </h1>
+  <p>
+    Create react roles that Role<span class="rolebot-red">Bot</span> will
+    manage for you.
+  </p>
+</div>
+
+<div class="description-grid">
+  @for (example of examples; track example.title; let even = $even) {
+    <div class="row-grid">
+      <div>
+        <h1>{{ example.title }}</h1>
+        <p>{{ example.description }}</p>
+      </div>
+      <img [src]="'./assets/examples/' + example.image" [ngClass]="{ 'flip': !even }">
+    </div>
+  }
+</div>
+
+<div class="invite-today">
+  <h2>Have hassle-free react roles today</h2>
+  <a class="invite-button" [href]="INVITE_URL">Add RoleBot to your server</a>
 </div>

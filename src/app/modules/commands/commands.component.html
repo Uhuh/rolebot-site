@@ -1,41 +1,38 @@
 <div class="command-container">
-  <div>
-    <div class="nav-wrapper">
-      <h1>Categories</h1>
-      <a class="top" href="commands#" (click)="setActiveItem('')">
-        <i class="up-arrow"></i>
-        Top
-      </a>
+  <div class="nav-wrapper">
+    <h1>Categories</h1>
+    <a class="top" href="commands#" (click)="setActiveItem('')">
+      <i class="up-arrow"></i>
+      Top
+    </a>
+    @for (category of categories; track category) {
       <a
-        *ngFor="let category of categories"
         (click)="setActiveItem(category)"
         [ngClass]="{ active: category === activeItem }"
         [href]="'commands#' + category"
-        >{{ category.charAt(0).toUpperCase() + category.slice(1) }}</a
       >
-    </div>
+        {{ category.charAt(0).toUpperCase() + category.slice(1) }}
+      </a>
+    }
   </div>
   <div class="command-list">
     <div class="commands">
       <h1 class="command-header" id="reaction">React commands</h1>
-      <app-accordion
-        *ngFor="let command of reactCommands"
-        [slashCommand]="command"
-      />
+      @for (command of reactCommands; track command.title) {
+        <app-accordion [slashCommand]="command" />
+      }
     </div>
     <div class="commands">
       <h1 class="command-header" id="category">Category commands</h1>
-      <app-accordion
-        *ngFor="let command of categoryCommands"
-        [slashCommand]="command"
-      />
+      @for (command of categoryCommands; track command.title) {
+        <app-accordion [slashCommand]="command" />
+      }
     </div>
     <div class="commands">
       <h1 class="command-header" id="general">General commands</h1>
-      <app-accordion
-        *ngFor="let command of generalCommands"
-        [slashCommand]="command"
-      />
+      @for (command of generalCommands; track command.title) {
+        <app-accordion [slashCommand]="command" />
+      }
     </div>
   </div>
 </div>

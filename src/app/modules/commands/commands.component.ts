@@ -16,11 +16,11 @@ import { NgClass, NgForOf } from '@angular/common';
   ],
 })
 export class CommandsComponent {
-  categoryCommands: ISlashCommand[] = commands['category'] ?? [];
-  reactCommands: ISlashCommand[] = commands['react'] ?? [];
-  generalCommands: ISlashCommand[] = commands['general'] ?? [];
+  readonly categoryCommands: ISlashCommand[] = commands['category'] ?? [];
+  readonly reactCommands: ISlashCommand[] = commands['react'] ?? [];
+  readonly generalCommands: ISlashCommand[] = commands['general'] ?? [];
+  readonly categories = ['reaction', 'category', 'general'];
 
-  categories = ['reaction', 'category', 'general'];
   activeItem = this.categories[0]; // Default to first item.
 
   setActiveItem(item: string) {

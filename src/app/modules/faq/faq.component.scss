@@ -3,6 +3,10 @@
   flex: 1;
 }
 
+a {
+  color: var(--blurple);
+}
+
 .faq-container {
   display: flex;
   flex-direction: column;

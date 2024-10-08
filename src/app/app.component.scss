@@ -25,7 +25,7 @@
   gap: 10px;
   text-align: center;
   justify-content: center;
-  background-color: var(--rolebot-green);
+  background-color: rgba(var(--rolebot-green), 1);
   color: #fff;
 
   @media(max-width: 800px) {
@@ -35,13 +35,4 @@
       flex-wrap: wrap;
     }
   }
-}
-
-.bg-banner {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-image: var(--logoless-banner-dark);
-  background-size: cover;
-  z-index: -1;
 }

@@ -11,3 +11,6 @@ bootstrapApplication(AppComponent, {
   ],
 })
   .catch((err) => console.error(err));
+
+
+export const INVITE_URL = 'https://discord.com/oauth2/authorize?client_id=741682757486510081&scope=bot%20applications.commands&permissions=2416035904&response_type=code&redirect_uri=https://rolebot.gg/';
