@@ -21,21 +21,21 @@
       <app-accordion
         *ngFor="let command of reactCommands"
         [slashCommand]="command"
-      ></app-accordion>
+      />
     </div>
     <div class="commands">
       <h1 class="command-header" id="category">Category commands</h1>
       <app-accordion
         *ngFor="let command of categoryCommands"
         [slashCommand]="command"
-      ></app-accordion>
+      />
     </div>
     <div class="commands">
       <h1 class="command-header" id="general">General commands</h1>
       <app-accordion
         *ngFor="let command of generalCommands"
         [slashCommand]="command"
-      ></app-accordion>
+      />
     </div>
   </div>
 </div>

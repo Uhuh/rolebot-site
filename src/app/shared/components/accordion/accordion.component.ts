@@ -7,6 +7,7 @@ import {
 } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { ISlashCommand } from '../../types/interfaces';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-accordion',
@@ -19,7 +20,7 @@ import { ISlashCommand } from '../../types/interfaces';
         style({
           maxHeight: '1000px',
           opacity: '1',
-        })
+        }),
       ),
       state(
         'closed',
@@ -28,21 +29,23 @@ import { ISlashCommand } from '../../types/interfaces';
           opacity: '0',
           overflow: 'hidden',
           padding: 0,
-        })
+        }),
       ),
       transition('open => closed', animate('200ms ease')),
       transition('closed => open', animate('300ms ease')),
     ]),
   ],
+  standalone: true,
+  imports: [
+    NgClass,
+    NgIf,
+    NgForOf,
+  ],
 })
-export class AccordionComponent implements OnInit {
+export class AccordionComponent {
   @Input() slashCommand?: ISlashCommand;
   active = false;
   openClosedState = 'closed';
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   toggleOpenClosed() {
     this.active = !this.active;
