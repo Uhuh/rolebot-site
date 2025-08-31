@@ -25,7 +25,7 @@ export class HomeComponent {
     {
       title: 'Serving',
       icon: 'dns',
-      message: '50,000+ servers',
+      message: '43,000+ servers',
     },
     {
       title: 'Categories created',
