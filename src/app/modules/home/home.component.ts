@@ -25,22 +25,22 @@ export class HomeComponent {
     {
       title: 'Serving',
       icon: 'dns',
-      message: '33,000+ servers',
+      message: '50,000+ servers',
     },
     {
       title: 'Categories created',
       icon: 'folder',
-      message: '100,000+ categories',
+      message: '125,000+ categories',
     },
     {
       title: 'React roles created',
       icon: 'add_reaction',
-      message: '400,000+ react roles',
+      message: '450,000+ react roles',
     },
     {
       title: 'React messages create',
       icon: 'chat',
-      message: '500,000+ messages',
+      message: '750,000+ messages',
     },
     {
       title: 'Days free',
